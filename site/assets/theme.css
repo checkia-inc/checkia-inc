@@ -105,7 +105,7 @@ header.site {
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 24px; }
 .nav-left { display: flex; align-items: center; gap: 38px; min-width: 0; }
-.logo { display: flex; align-items: center; gap: 9px; font-weight: 700; font-size: 19px; color: var(--ink); letter-spacing: -.02em; }
+.logo { display: flex; align-items: center; gap: 7px; font-weight: 700; font-size: 19px; color: var(--ink); letter-spacing: -.02em; }
 .logo img, .logo svg { height: 26px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav-links > li > a, .nav-btn {
