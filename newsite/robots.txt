@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /content/
-Disallow: /lib/
-Disallow: /site/
-Disallow: /docs/
-Disallow: /Archive/
-
-Sitemap: https://www.checkia.fr/sitemap.xml
