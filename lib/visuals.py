@@ -5,65 +5,91 @@ no external asset dependency. Every diagram carries a title/desc for assistive
 technology and is described in prose nearby so the page still reads without it.
 """
 
+import zlib
 
-def _frame(body, view="0 0 900 420", label="", desc=""):
+
+def _frame(body, view="0 0 900 420", label="", desc="", cls=""):
+    # zlib.crc32 rather than hash(): PRNG-seeded string hashing would change the
+    # generated ids on every build and make the output non-reproducible.
+    uid = zlib.crc32(label.encode("utf-8")) % 99999
     return (
-        '<svg class="dgm" viewBox="%s" role="img" aria-labelledby="t%d d%d" '
+        '<svg class="dgm%s" viewBox="%s" role="img" aria-labelledby="t%d d%d" '
         'preserveAspectRatio="xMidYMid meet">'
         '<title id="t%d">%s</title><desc id="d%d">%s</desc>%s</svg>'
-    ) % (view, abs(hash(label)) % 9999, abs(hash(label)) % 9999,
-         abs(hash(label)) % 9999, label, abs(hash(label)) % 9999, desc, body)
+    ) % ((" " + cls) if cls else "", view, uid, uid, uid, label, uid, desc, body)
 
 
 def pipeline():
-    """The five mission stages, as the product actually sequences them."""
+    """The five mission stages, as the product actually sequences them.
+
+    Laid out vertically: this diagram sits in the hero's right-hand column,
+    against a tall text column. A wide, short arrangement would render at a
+    fraction of the column height and read as an afterthought, so the stages
+    stack and the block fills its column.
+    """
     # Sub-labels are kept short on purpose: they are rendered as SVG <text>,
     # which does not wrap. The full document list lives in the prose nearby.
     stages = [
-        ("Acceptation", "Indépendance, fiche"),
+        ("Acceptation", "Indépendance, fiche d'acceptation"),
         ("Contractualisation", "Lettre de mission, budget"),
-        ("Planification", "Plan, organisation"),
+        ("Planification", "Plan de mission, organisation"),
         ("Travaux", "Documents de travail"),
-        ("Restitution", "Affirmation, rapport"),
+        ("Restitution", "Lettre d'affirmation, rapport"),
     ]
+    W = 620          # viewBox width
+    PAD = 16         # left inset of the card column
+    CARD_W = W - PAD * 2
+    CARD_H = 92
+    GAP = 22
+    TOP = 96         # first card's y
+    BADGE_CX = PAD + 42
+
     parts = []
-    x = 18
-    w = 158
-    gap = 15
     for idx, (name, sub) in enumerate(stages):
+        y = TOP + idx * (CARD_H + GAP)
+        mid = y + CARD_H // 2
         parts.append(
             '<g class="dgm-node">'
-            '<rect x="%d" y="86" width="%d" height="96" rx="12"/>'
-            '<text class="dgm-num" x="%d" y="112">ÉTAPE %d</text>'
-            '<text class="dgm-t" x="%d" y="136">%s</text>'
-            '<text class="dgm-s" x="%d" y="158">%s</text>'
-            "</g>" % (x, w, x + 14, idx + 1, x + 14, name, x + 14, sub)
+            '<rect x="%d" y="%d" width="%d" height="%d" rx="14"/>'
+            '<circle class="dgm-badge" cx="%d" cy="%d" r="19"/>'
+            '<text class="dgm-badge-n" x="%d" y="%d">%d</text>'
+            '<text class="dgm-t" x="%d" y="%d">%s</text>'
+            '<text class="dgm-s" x="%d" y="%d">%s</text>'
+            "</g>"
+            % (PAD, y, CARD_W, CARD_H,
+               BADGE_CX, mid,
+               BADGE_CX, mid + 6, idx + 1,
+               BADGE_CX + 42, mid - 6, name,
+               BADGE_CX + 42, mid + 18, sub)
         )
         if idx < len(stages) - 1:
-            ax = x + w + 2
             parts.append(
-                '<path class="dgm-arrow" d="M%d 134 L%d 134" marker-end="url(#ah)"/>'
-                % (ax, ax + gap - 4)
+                '<path class="dgm-arrow" d="M%d %d L%d %d" marker-end="url(#ah)"/>'
+                % (BADGE_CX, y + CARD_H, BADGE_CX, y + CARD_H + GAP - 5)
             )
-        x += w + gap
+
+    bottom = TOP + len(stages) * (CARD_H + GAP) - GAP
     defs = (
         '<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" '
         'markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
         '<path d="M0 0 L10 5 L0 10 z" class="dgm-arrowhead"/></marker></defs>'
     )
     head = (
-        '<text class="dgm-cap" x="18" y="44">Déroulé d\'une mission dans CheckIA</text>'
-        '<text class="dgm-caps" x="18" y="66">Chaque étape s\'ouvre manuellement ; '
-        'les documents d\'une même étape avancent en parallèle.</text>'
+        '<text class="dgm-cap" x="%d" y="34">Déroulé d\'une mission dans CheckIA</text>'
+        '<text class="dgm-caps" x="%d" y="60">Chaque étape s\'ouvre manuellement ;</text>'
+        '<text class="dgm-caps" x="%d" y="78">les documents d\'une même étape avancent en parallèle.</text>'
+        % (PAD, PAD, PAD)
     )
     foot = (
-        '<text class="dgm-caps" x="18" y="216">Fin de mission à l\'envoi du rapport signé.</text>'
+        '<text class="dgm-caps" x="%d" y="%d">Fin de mission à l\'envoi du rapport signé.</text>'
+        % (PAD, bottom + 30)
     )
     return _frame(
         defs + head + "".join(parts) + foot,
-        view="0 0 900 240",
+        view="0 0 %d %d" % (W, bottom + 44),
         label="Les cinq étapes d'une mission",
         desc="Acceptation, contractualisation, planification, travaux, restitution.",
+        cls="dgm-v",
     )
 
 

@@ -269,6 +269,15 @@ header.site {
 .dgm-s { font-size: 10.8px; fill: var(--ink-mute); }
 .dgm-cap { font-size: 15px; font-weight: 620; fill: var(--ink); }
 .dgm-caps { font-size: 12px; fill: var(--ink-mute); }
+/* Numbered badge — vertical pipeline. */
+.dgm-badge { fill: var(--blue-tint); stroke: #CFE1F6; stroke-width: 1.2; }
+.dgm-badge-n { font-size: 15px; font-weight: 700; fill: var(--blue); text-anchor: middle; }
+/* The vertical pipeline uses a 620-unit viewBox against ~900 elsewhere, so its
+   type is set smaller in user units to land at the same rendered size. */
+.dgm-v .dgm-cap { font-size: 15.5px; }
+.dgm-v .dgm-caps { font-size: 11.6px; }
+.dgm-v .dgm-t { font-size: 16px; }
+.dgm-v .dgm-s { font-size: 11.8px; }
 .dgm-rowlab { font-size: 11.5px; font-weight: 680; letter-spacing: .08em; text-transform: uppercase; fill: var(--ink-mute); }
 .dgm-arrow { stroke: var(--line-strong); stroke-width: 1.5; fill: none; }
 .dgm-arrowhead { fill: var(--line-strong); }
