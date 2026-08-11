@@ -190,32 +190,43 @@ def before_after():
 
 
 def generic_vs_checkia():
-    """Why a generic chatbot is a different object from a mission platform."""
+    """Why a generic chatbot is a different object from a mission platform.
+
+    Laid out as two vertical columns: the block sits in a split section beside
+    a tall text column, where a left-to-right chain of seven chips renders as a
+    thin strip. Flowing top-down fills the column and keeps the two paths
+    directly comparable.
+    """
     left = ["Prompt", "Texte généré"]
     right = ["Mission", "Documents sources", "Contexte structuré",
              "Trame du cabinet", "Document produit", "Revue humaine", "Traçabilité"]
+    CHIP_H = 46
+    GAP = 20
+    TOP = 48         # first chip's y, below the column label
+
+    def column(items, x, width, cls, label, text_cls=""):
+        parts = ['<text class="dgm-rowlab" x="%d" y="28">%s</text>' % (x, label)]
+        cx = x + width // 2
+        for idx, it in enumerate(items):
+            y = TOP + idx * (CHIP_H + GAP)
+            parts.append(
+                '<g class="dgm-chip %s"><rect x="%d" y="%d" width="%d" height="%d" rx="10"/>'
+                '<text%s x="%d" y="%d">%s</text></g>'
+                % (cls, x, y, width, CHIP_H,
+                   (' class="%s"' % text_cls) if text_cls else "",
+                   cx, y + 29, it)
+            )
+            if idx < len(items) - 1:
+                parts.append(
+                    '<path class="dgm-arrow" d="M%d %d L%d %d" marker-end="url(#ah4)"/>'
+                    % (cx, y + CHIP_H + 3, cx, y + CHIP_H + GAP - 3)
+                )
+        return "".join(parts)
+
     parts = [
-        '<text class="dgm-rowlab" x="18" y="34">Assistant généraliste</text>',
-        '<text class="dgm-rowlab" x="18" y="140">Plateforme de mission</text>',
+        column(left, 18, 214, "chip-mute", "Assistant généraliste"),
+        column(right, 288, 234, "chip-live", "Plateforme de mission", "dgm-sm"),
     ]
-    x = 18
-    for idx, it in enumerate(left):
-        parts.append(
-            '<g class="dgm-chip chip-mute"><rect x="%d" y="48" width="164" height="44" rx="10"/>'
-            '<text x="%d" y="75">%s</text></g>' % (x, x + 82, it)
-        )
-        if idx < len(left) - 1:
-            parts.append('<path class="dgm-arrow" d="M%d 70 L%d 70" marker-end="url(#ah4)"/>' % (x + 166, x + 180))
-        x += 182
-    x = 18
-    for idx, it in enumerate(right):
-        parts.append(
-            '<g class="dgm-chip chip-live"><rect x="%d" y="154" width="112" height="44" rx="10"/>'
-            '<text class="dgm-sm" x="%d" y="181">%s</text></g>' % (x, x + 56, it)
-        )
-        if idx < len(right) - 1:
-            parts.append('<path class="dgm-arrow" d="M%d 176 L%d 176" marker-end="url(#ah4)"/>' % (x + 114, x + 124))
-        x += 126
     defs = (
         '<defs><marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" '
         'markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
@@ -223,7 +234,8 @@ def generic_vs_checkia():
     )
     return _frame(
         defs + "".join(parts),
-        view="0 0 900 215",
+        view="0 0 540 508",
+        cls="dgm-cols",
         label="Assistant généraliste comparé à une plateforme de mission",
         desc=(
             "Un assistant généraliste va du prompt au texte. Une plateforme de mission "

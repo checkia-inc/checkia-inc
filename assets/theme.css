@@ -278,6 +278,9 @@ header.site {
 .dgm-v .dgm-caps { font-size: 11.6px; }
 .dgm-v .dgm-t { font-size: 16px; }
 .dgm-v .dgm-s { font-size: 11.8px; }
+/* Two vertical columns: capped so the diagram keeps its intended type size in a
+   full-width figure instead of scaling up to the container. */
+.dgm-cols { display: block; max-width: 540px; margin: 0 auto; }
 .dgm-rowlab { font-size: 11.5px; font-weight: 680; letter-spacing: .08em; text-transform: uppercase; fill: var(--ink-mute); }
 .dgm-arrow { stroke: var(--line-strong); stroke-width: 1.5; fill: none; }
 .dgm-arrowhead { fill: var(--line-strong); }
