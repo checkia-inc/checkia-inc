@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "checkia-inc",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-c",
+        "import os,http.server,socketserver;os.chdir('/Users/chloealpert/Documents/GitHub/checkia-inc');socketserver.TCPServer.allow_reuse_address=True;socketserver.TCPServer(('127.0.0.1',8765),http.server.SimpleHTTPRequestHandler).serve_forever()"
+      ],
+      "port": 8765
+    }
+  ]
+}

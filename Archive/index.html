@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CheckIA - Plateforme de structuration et d'automatisation documentaire des missions CAC</title>
+  <meta name="description" content="La formalisation représente plus de la moitié du temps d'une mission. CheckIA la structure, l'homogénéise et l'automatise dans un cadre conforme aux exigences professionnelles.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.checkia.fr/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.checkia.fr/">
+  <meta property="og:title" content="CheckIA - Plateforme de structuration et d'automatisation documentaire des missions CAC">
+  <meta property="og:description" content="La formalisation représente plus de la moitié du temps d'une mission. CheckIA la structure, l'homogénéise et l'automatise dans un cadre conforme aux exigences professionnelles.">
+  <meta property="og:image" content="https://www.checkia.fr/images/Group-1700.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="CheckIA">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CheckIA - Plateforme de structuration et d'automatisation documentaire des missions CAC">
+  <meta name="twitter:description" content="La formalisation représente plus de la moitié du temps d'une mission. CheckIA la structure, l'homogénéise et l'automatise dans un cadre conforme aux exigences professionnelles.">
+  <meta name="twitter:image" content="https://www.checkia.fr/images/Group-1700.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/webclip.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "CheckIA Inc",
+        "url": "https://www.checkia.fr",
+        "logo": "https://www.checkia.fr/images/logo_coor.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@checkia.fr",
+          "contactType": "customer service"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "CheckIA",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://www.checkia.fr",
+        "description": "Plateforme de structuration et d'automatisation documentaire des missions CAC. CheckIA structure, homogénéise et automatise la formalisation dans un cadre conforme aux exigences professionnelles.",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://calendar.notion.so/meet/jdcollard/checkia"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "CheckIA Inc"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Design tokens ── */
+    :root {
+      --black-primary:   #181b25;
+      --black-secondary: #67676b;
+      --gray-primary:    #e5e7eb;
+      --gray-secondary:  #f5f8fc;
+      --green-primary:   #d9f8c0;
+      --blue-primary:    #bfe2ff;
+      --light-blue:      #d3f8fe;
+      --white:           #ffffff;
+
+      --font-body:    'Inter', sans-serif;
+      --font-display: 'Playfair Display', serif;
+
+      --h1: 3rem;
+      --h2: 2.25rem;
+      --h3: 1.375rem;
+      --h4: 1.125rem;
+      --body-lg: 1.125rem;
+      --body:    1rem;
+      --body-sm: 0.875rem;
+      --body-xs: 0.75rem;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+
+      --space-xs:  0.5rem;
+      --space-sm:  1rem;
+      --space-md:  1.5rem;
+      --space-lg:  2.5rem;
+      --space-xl:  4rem;
+      --space-2xl: 6rem;
+      --space-3xl: 8rem;
+
+      --shadow-sm: 0 1px 3px rgba(24,27,37,0.06), 0 1px 2px rgba(24,27,37,0.04);
+      --shadow-md: 0 4px 16px rgba(24,27,37,0.08), 0 2px 6px rgba(24,27,37,0.04);
+      --shadow-lg: 0 12px 40px rgba(24,27,37,0.10), 0 4px 12px rgba(24,27,37,0.06);
+
+      --nav-h: 68px;
+      --container: 1120px;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-body);
+      font-size: var(--body);
+      color: var(--black-primary);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
+
+    /* ── Typography ── */
+    .h1 { font-size: clamp(2rem, 4.5vw, var(--h1)); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--black-primary); }
+    .h2 { font-size: clamp(1.6rem, 3vw, var(--h2)); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--black-primary); }
+    .h3 { font-size: var(--h3); font-weight: 600; line-height: 1.3; color: var(--black-primary); }
+    .h4 { font-size: var(--h4); font-weight: 600; line-height: 1.4; color: var(--black-primary); }
+    .body-lg { font-size: var(--body-lg); line-height: 1.65; color: var(--black-secondary); }
+    .body { font-size: var(--body); line-height: 1.65; color: var(--black-secondary); }
+    .body-sm { font-size: var(--body-sm); line-height: 1.55; color: var(--black-secondary); }
+    .text-center { text-align: center; }
+
+    /* ── Layout ── */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    .section { padding: var(--space-3xl) 0; }
+    .section--tight { padding: var(--space-2xl) 0; }
+    .section--flush-top { padding-top: 0; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-size: var(--body);
+      font-weight: 600;
+      line-height: 1;
+      transition: opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--black-primary);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover { box-shadow: var(--shadow-md); }
+    .btn-outline {
+      background: transparent;
+      color: var(--black-primary);
+      border: 1.5px solid var(--gray-primary);
+    }
+    .btn-outline:hover { border-color: var(--black-primary); }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      font-size: var(--body-sm);
+      font-weight: 500;
+      background: var(--green-primary);
+      color: var(--black-primary);
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gray-primary);
+    }
+    .nav__inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-lg);
+    }
+    .nav__logo img { height: 32px; width: auto; }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+    .nav__link {
+      font-size: var(--body-sm);
+      font-weight: 500;
+      color: var(--black-secondary);
+      transition: color 0.15s;
+    }
+    .nav__link:hover { color: var(--black-primary); }
+    .nav__right { display: flex; align-items: center; gap: var(--space-sm); }
+    .nav__burger {
+      display: none;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .nav__burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--black-primary);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav__mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--white);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-lg);
+    }
+    .nav__mobile.open { display: flex; }
+    .nav__mobile .nav__link { font-size: 1.25rem; }
+    .nav__mobile .btn { width: auto; }
+
+    /* ── Hero ── */
+    .hero {
+      padding-top: calc(var(--nav-h) + var(--space-3xl));
+      padding-bottom: var(--space-2xl);
+      background: var(--white);
+      overflow: hidden;
+    }
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .hero__text { display: flex; flex-direction: column; gap: var(--space-md); }
+    .hero__trust {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    .hero__trust-dot {
+      color: var(--gray-primary);
+      font-size: var(--body-xs);
+    }
+    .hero__trust-item {
+      font-size: var(--body-sm);
+      font-weight: 500;
+      color: var(--black-secondary);
+    }
+    .hero__ctas {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    .hero__screenshots {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .hero__screenshots img {
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      object-fit: cover;
+    }
+    .hero__screenshots img:nth-child(2) {
+      margin-left: 20px;
+    }
+    .hero__screenshots img:nth-child(3) {
+      margin-left: 40px;
+    }
+
+    /* Fade-in on load */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { animation: fadeUp 0.6s ease both; }
+    .fade-in-1 { animation-delay: 0.05s; }
+    .fade-in-2 { animation-delay: 0.15s; }
+    .fade-in-3 { animation-delay: 0.25s; }
+    .fade-in-4 { animation-delay: 0.35s; }
+    .fade-in-5 { animation-delay: 0.45s; }
+
+    /* ── Logo marquee ── */
+    .marquee {
+      overflow: hidden;
+      position: relative;
+      padding: var(--space-lg) 0;
+      border-top: 1px solid var(--gray-primary);
+      border-bottom: 1px solid var(--gray-primary);
+      margin-top: var(--space-xl);
+    }
+    .marquee::before,
+    .marquee::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+    .marquee::after  { right: 0; background: linear-gradient(to left, var(--white), transparent); }
+    .marquee__track {
+      display: flex;
+      gap: var(--space-xl);
+      width: max-content;
+      animation: scroll 28s linear infinite;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee__logo { height: 28px; width: auto; opacity: 0.55; filter: grayscale(1); }
+    .marquee__label {
+      font-size: var(--body-sm);
+      font-weight: 500;
+      color: var(--black-secondary);
+      text-align: center;
+      margin-bottom: var(--space-sm);
+    }
+
+    /* ── Problem section ── */
+    .problem { background: var(--gray-secondary); }
+    .problem__header { max-width: 640px; margin: 0 auto var(--space-xl); }
+    .problem__tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: var(--space-sm);
+      font-size: var(--body-sm);
+      font-weight: 600;
+      color: var(--black-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .problem__kicker {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: var(--space-sm);
+    }
+    .problem__kicker-item {
+      font-size: var(--body);
+      font-weight: 600;
+      color: var(--black-primary);
+      background: var(--white);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      border: 1px solid var(--gray-primary);
+    }
+    .problem__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+    .problem__card {
+      background: var(--white);
+      border: 1px solid var(--gray-primary);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      transition: box-shadow 0.2s;
+    }
+    .problem__card:hover { box-shadow: var(--shadow-md); }
+    .problem__card-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gray-secondary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .problem__card-icon img { width: 20px; height: 20px; }
+
+    /* ── Solution section ── */
+    .solution__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+    .solution__content { display: flex; flex-direction: column; gap: var(--space-lg); }
+    .solution__body { max-width: 480px; }
+    .solution__features { display: flex; flex-direction: column; gap: 0; }
+    .solution__feature {
+      display: flex;
+      gap: var(--space-md);
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--gray-primary);
+      align-items: flex-start;
+    }
+    .solution__feature:last-child { border-bottom: none; }
+    .solution__feature-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      background: var(--green-primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .solution__feature-icon img { width: 18px; height: 18px; }
+    .solution__image img {
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+    }
+    .solution__image { position: sticky; top: calc(var(--nav-h) + var(--space-md)); }
+
+    /* ── Stats ── */
+    .stats { background: var(--black-primary); }
+    .stats__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+    .stats__card {
+      background: var(--black-primary);
+      padding: var(--space-xl) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .stats__number {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .stats__label {
+      font-size: var(--body);
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+    .stats__text-card {
+      background: rgba(255,255,255,0.04);
+      padding: var(--space-xl) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      justify-content: center;
+    }
+    .stats__caption {
+      font-size: var(--body-sm);
+      color: rgba(255,255,255,0.5);
+      margin-top: var(--space-xs);
+    }
+
+    /* ── Pillars ── */
+    .pillars { background: var(--white); }
+    .pillars__header { max-width: 640px; margin: 0 auto var(--space-xl); }
+    .pillars__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+    .pillar {
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .pillar--blue  { background: var(--blue-primary); }
+    .pillar--green { background: var(--green-primary); }
+    .pillar__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .pillar__title { font-size: var(--h3); font-weight: 700; color: var(--black-primary); }
+    .pillar__check { width: 24px; height: 24px; opacity: 0.5; }
+    .pillar__items { display: flex; flex-direction: column; gap: var(--space-sm); }
+    .pillar__item {
+      font-size: var(--body);
+      color: var(--black-primary);
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
+    /* ── Features tabs ── */
+    .features { background: var(--gray-secondary); }
+    .features__header { max-width: 640px; margin: 0 auto var(--space-xl); }
+    .features__layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+    .features__tabs { display: flex; flex-direction: column; gap: 2px; }
+    .features__tab {
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background 0.18s, border-color 0.18s;
+      background: transparent;
+      text-align: left;
+    }
+    .features__tab:hover { background: var(--white); border-color: var(--gray-primary); }
+    .features__tab.active { background: var(--white); border-color: var(--gray-primary); box-shadow: var(--shadow-sm); }
+    .features__tab-title { font-size: var(--body); font-weight: 600; color: var(--black-primary); margin-bottom: 4px; }
+    .features__tab-desc { font-size: var(--body-sm); color: var(--black-secondary); line-height: 1.5; }
+    .features__preview { position: sticky; top: calc(var(--nav-h) + var(--space-md)); }
+    .features__screen { display: none; }
+    .features__screen.active { display: block; }
+    .features__screen img {
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+    }
+
+    /* ── Final CTA ── */
+    .cta-final {
+      background: linear-gradient(135deg, var(--black-primary) 0%, #2a2d3a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(217,248,192,0.12), transparent);
+    }
+    .cta-final__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .cta-final__content { display: flex; flex-direction: column; gap: var(--space-lg); }
+    .cta-final .h2 { color: var(--white); }
+    .cta-final .body-lg { color: rgba(255,255,255,0.65); }
+    .cta-final__img img {
+      border-radius: var(--radius-xl);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      width: 100%;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--white);
+      border-top: 1px solid var(--gray-primary);
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+    .footer__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-lg);
+    }
+    .footer__logo img { height: 28px; width: auto; opacity: 0.55; }
+    .footer__nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+    .footer__nav a {
+      font-size: var(--body-sm);
+      color: var(--black-secondary);
+      transition: color 0.15s;
+    }
+    .footer__nav a:hover { color: var(--black-primary); }
+    .footer__bottom {
+      border-top: 1px solid var(--gray-primary);
+      padding-top: var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .footer__copy { font-size: var(--body-sm); color: var(--black-secondary); }
+    .footer__links { display: flex; gap: var(--space-md); }
+    .footer__links a { font-size: var(--body-sm); color: var(--black-secondary); transition: color 0.15s; }
+    .footer__links a:hover { color: var(--black-primary); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      :root { --space-2xl: 4rem; --space-3xl: 5rem; }
+      .hero__inner { grid-template-columns: 1fr; }
+      .hero__text { order: 1; }
+      .hero__screenshots { order: 2; }
+      .problem__cards { grid-template-columns: 1fr; }
+      .solution__inner { grid-template-columns: 1fr; }
+      .solution__image { position: static; }
+      .stats__inner { grid-template-columns: 1fr 1fr; }
+      .stats__text-card { grid-column: 1 / -1; }
+      .pillars__grid { grid-template-columns: 1fr; }
+      .features__layout { grid-template-columns: 1fr; }
+      .features__preview { position: static; }
+      .cta-final__inner { grid-template-columns: 1fr; }
+      .cta-final__img { order: -1; }
+      .nav__links { display: none; }
+      .nav__right .btn { display: none; }
+      .nav__burger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      :root {
+        --space-xl: 3rem;
+        --space-2xl: 3.5rem;
+        --space-3xl: 4rem;
+      }
+      .stats__inner { grid-template-columns: 1fr; }
+      .stats__text-card { grid-column: auto; }
+      .hero__ctas { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <header>
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="CheckIA - Accueil">
+          <img src="images/logo_coor.png" alt="CheckIA" width="140" height="32">
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="/about.html" class="nav__link">À propos</a></li>
+          <li><a href="/customer-stories.html" class="nav__link">Témoignages</a></li>
+          <li><a href="/blog.html" class="nav__link">Blog</a></li>
+        </ul>
+        <div class="nav__right">
+          <a href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener" class="btn btn-primary">
+            Réserver une démonstration
+          </a>
+          <button class="nav__burger" aria-label="Menu" aria-expanded="false" id="burger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="/about.html" class="nav__link">À propos</a>
+      <a href="/customer-stories.html" class="nav__link">Témoignages</a>
+      <a href="/blog.html" class="nav__link">Blog</a>
+      <a href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener" class="btn btn-primary">
+        Réserver une démonstration
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero section" aria-label="Présentation CheckIA">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__text">
+            <span class="badge fade-in fade-in-1">Conçu en France · Infrastructure souveraine</span>
+            <h1 class="h1 fade-in fade-in-2">
+              Plateforme de structuration et d'automatisation documentaire des missions CAC
+            </h1>
+            <p class="body-lg fade-in fade-in-3">
+              La formalisation représente plus de la moitié du temps d'une mission.
+              CheckIA la structure, l'homogénéise et l'automatise dans un cadre conforme aux exigences professionnelles.
+            </p>
+            <p class="body fade-in fade-in-3" style="color: var(--black-secondary);">
+              Conçu en France par des commissaires aux comptes et des experts en intelligence artificielle.
+            </p>
+            <div class="hero__trust fade-in fade-in-4">
+              <span class="hero__trust-item">Sécurité des données</span>
+              <span class="hero__trust-dot" aria-hidden="true">·</span>
+              <span class="hero__trust-item">Conformité CNCC</span>
+              <span class="hero__trust-dot" aria-hidden="true">·</span>
+              <span class="hero__trust-item">Infrastructure souveraine</span>
+            </div>
+            <div class="hero__ctas fade-in fade-in-5">
+              <a href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener" class="btn btn-primary">
+                Réserver une démonstration
+              </a>
+              <a href="/about.html" class="btn btn-outline">En savoir plus</a>
+            </div>
+          </div>
+          <div class="hero__screenshots fade-in fade-in-4">
+            <img src="images/1.png"
+                 alt="Interface CheckIA — structuration des données de mission"
+                 width="640" height="400"
+                 srcset="images/1-p-500.png 500w, images/1.png 640w"
+                 sizes="(max-width: 640px) 100vw, 640px">
+            <img src="images/2.png"
+                 alt="Interface CheckIA — génération documentaire automatisée"
+                 width="641" height="400"
+                 loading="lazy"
+                 srcset="images/2.png 641w"
+                 sizes="(max-width: 641px) 100vw, 641px">
+            <img src="images/3.png"
+                 alt="Interface CheckIA — centralisation des éléments probants"
+                 width="640" height="400"
+                 loading="lazy"
+                 srcset="images/3-p-500.png 500w, images/3.png 640w"
+                 sizes="(max-width: 640px) 100vw, 640px">
+          </div>
+        </div>
+
+        <!-- Logo strip -->
+        <div class="marquee" aria-hidden="true">
+          <p class="marquee__label" style="padding: 0 var(--space-md) var(--space-sm);">Utilisé dans les cabinets</p>
+          <div class="marquee__track">
+            <img src="images/Logo.svg"   class="marquee__logo" alt="Cabinet partenaire 1" loading="lazy">
+            <img src="images/Logo-1.svg" class="marquee__logo" alt="Cabinet partenaire 2" loading="lazy">
+            <img src="images/Logo-2.svg" class="marquee__logo" alt="Cabinet partenaire 3" loading="lazy">
+            <img src="images/Logo-3.svg" class="marquee__logo" alt="Cabinet partenaire 4" loading="lazy">
+            <img src="images/Logo-4.svg" class="marquee__logo" alt="Cabinet partenaire 5" loading="lazy">
+            <img src="images/Logo-5.svg" class="marquee__logo" alt="Cabinet partenaire 6" loading="lazy">
+            <!-- duplicate for seamless loop -->
+            <img src="images/Logo.svg"   class="marquee__logo" alt="" loading="lazy">
+            <img src="images/Logo-1.svg" class="marquee__logo" alt="" loading="lazy">
+            <img src="images/Logo-2.svg" class="marquee__logo" alt="" loading="lazy">
+            <img src="images/Logo-3.svg" class="marquee__logo" alt="" loading="lazy">
+            <img src="images/Logo-4.svg" class="marquee__logo" alt="" loading="lazy">
+            <img src="images/Logo-5.svg" class="marquee__logo" alt="" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Problem ── -->
+    <section class="problem section" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="problem__header text-center">
+          <h2 id="problem-heading" class="h2">
+            La formalisation représente la majorité du temps d'une mission CAC
+          </h2>
+          <p class="body-lg" style="margin-top: var(--space-sm);">Cette production documentaire est :</p>
+          <div class="problem__kicker" role="list">
+            <span class="problem__kicker-item" role="listitem">Répétitive</span>
+            <span class="problem__kicker-item" role="listitem">Manuelle</span>
+            <span class="problem__kicker-item" role="listitem">Chronophage</span>
+          </div>
+        </div>
+        <div class="problem__cards">
+          <article class="problem__card">
+            <div class="problem__card-icon">
+              <img src="images/x30.svg" alt="" aria-hidden="true" loading="lazy" width="20" height="20">
+            </div>
+            <h3 class="h3">Une charge excessive de formalisation</h3>
+            <p class="body">La production documentaire représente la majorité du temps d'une mission. Rédaction, reformulation et adaptation mobilisent un temps significatif au détriment de l'analyse et de la supervision.</p>
+          </article>
+          <article class="problem__card">
+            <div class="problem__card-icon">
+              <img src="images/clock30.svg" alt="" aria-hidden="true" loading="lazy" width="20" height="20">
+            </div>
+            <h3 class="h3">Un risque d'erreur humaine structurel</h3>
+            <p class="body">Plus un processus est manuel, plus il expose à des variations et oublis. Ces écarts fragilisent la revue interne et les contrôles qualité.</p>
+          </article>
+          <article class="problem__card">
+            <div class="problem__card-icon">
+              <img src="images/search30.svg" alt="" aria-hidden="true" loading="lazy" width="20" height="20">
+            </div>
+            <h3 class="h3">Des pièces justificatives dispersées</h3>
+            <p class="body">Les pièces justificatives sont souvent réparties entre différents supports et outils. Leur recherche et leur consolidation deviennent chronophages et sources de fragilité organisationnelle.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Solution ── -->
+    <section class="section" aria-labelledby="solution-heading">
+      <div class="container">
+        <div class="solution__inner">
+          <div class="solution__content">
+            <div>
+              <h2 id="solution-heading" class="h2">
+                La solution : Automatiser et sécuriser la formalisation des missions
+              </h2>
+              <p class="body-lg solution__body" style="margin-top: var(--space-md);">
+                CheckIA structure et automatise la production documentaire dans un cadre conforme aux exigences professionnelles. Il réduit significativement le temps consacré à la formalisation, tout en renforçant la cohérence et la traçabilité du dossier, sans intervenir sur le jugement du commissaire aux comptes qui reste maître de la mission.
+              </p>
+            </div>
+            <div class="solution__features">
+              <div class="solution__feature">
+                <div class="solution__feature-icon">
+                  <img src="images/folder-open-regular-full.svg" alt="" aria-hidden="true" loading="lazy" width="18" height="18">
+                </div>
+                <div>
+                  <h3 class="h4">Structuration automatisée des données mission</h3>
+                  <p class="body" style="margin-top: 4px;">Extraction des informations pertinentes à partir des pièces de mission. Organisation selon des trames homogènes et cohérentes entre dossiers.</p>
+                </div>
+              </div>
+              <div class="solution__feature">
+                <div class="solution__feature-icon">
+                  <img src="images/arrows-spin-solid-full.svg" alt="" aria-hidden="true" loading="lazy" width="18" height="18">
+                </div>
+                <div>
+                  <h3 class="h4">Génération documentaire standardisée</h3>
+                  <p class="body" style="margin-top: 4px;">Production de plans de mission, lettres et notes, selon une structure uniforme, conforme aux exigences professionnelles et personnalisée aux standards du cabinet. Réduction des variations formelles.</p>
+                </div>
+              </div>
+              <div class="solution__feature">
+                <div class="solution__feature-icon">
+                  <img src="images/folder-open-regular-full.svg" alt="" aria-hidden="true" loading="lazy" width="18" height="18">
+                </div>
+                <div>
+                  <h3 class="h4">Centralisation sécurisée des éléments probants</h3>
+                  <p class="body" style="margin-top: 4px;">Regroupement des pièces justificatives dans un environnement sécurisé et cloisonné. Facilitation de la revue interne et des contrôles qualité.</p>
+                </div>
+              </div>
+              <div class="solution__feature">
+                <div class="solution__feature-icon">
+                  <img src="images/circle-check-regular-full.svg" alt="" aria-hidden="true" loading="lazy" width="18" height="18">
+                </div>
+                <div>
+                  <h3 class="h4">Réduction des écarts avant revue</h3>
+                  <p class="body" style="margin-top: 4px;">L'automatisation réduit les incohérences structurelles. Le commissaire aux comptes conserve la validation finale et la responsabilité.</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <a href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener" class="btn btn-primary">
+                Réserver une démonstration
+              </a>
+            </div>
+          </div>
+          <div class="solution__image">
+            <img src="images/30331f5a-339b-4faa-9ddf-9c6256c5fc9d.png"
+                 alt="Tableau de bord CheckIA — vue d'ensemble d'une mission CAC"
+                 width="1024" height="680"
+                 loading="lazy"
+                 srcset="images/30331f5a-339b-4faa-9ddf-9c6256c5fc9d-p-500.png 500w, images/30331f5a-339b-4faa-9ddf-9c6256c5fc9d-p-800.png 800w, images/30331f5a-339b-4faa-9ddf-9c6256c5fc9d.png 1024w"
+                 sizes="(max-width: 1024px) 100vw, 512px">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Stats band ── -->
+    <section class="stats section--tight" aria-label="Chiffres clés">
+      <div class="container">
+        <div class="stats__inner">
+          <div class="stats__card">
+            <div class="stats__number">2</div>
+            <div class="stats__label">Familles de missions couvertes :<br>Apports et Transformation</div>
+          </div>
+          <div class="stats__card">
+            <div class="stats__number">100%</div>
+            <div class="stats__label">Alignés sur les NEP. Workflows structurés selon les exigences professionnelles.</div>
+          </div>
+          <div class="stats__text-card">
+            <h2 class="h3" style="color: var(--white); font-size: 1.25rem;">Un outil conçu pour la pratique du commissariat aux comptes</h2>
+            <p class="stats__caption">CheckIA s'intègre dans l'organisation du cabinet. Il ne modifie ni le rôle ni la responsabilité du commissaire aux comptes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Three pillars ── -->
+    <section class="pillars section" aria-labelledby="pillars-heading">
+      <div class="container">
+        <div class="pillars__header text-center">
+          <h2 id="pillars-heading" class="h2">Un outil conçu pour la pratique<br>du commissariat aux comptes</h2>
+        </div>
+        <div class="pillars__grid">
+          <article class="pillar pillar--blue">
+            <div class="pillar__header">
+              <h3 class="pillar__title">Expertise</h3>
+              <img src="images/circle-check-regular-full.svg" alt="" aria-hidden="true" class="pillar__check" loading="lazy" width="24" height="24">
+            </div>
+            <div class="pillar__items">
+              <p class="pillar__item">Conçu par des commissaires aux comptes</p>
+              <p class="pillar__item">Développé en collaboration avec des experts en intelligence artificielle français</p>
+            </div>
+          </article>
+          <article class="pillar pillar--green">
+            <div class="pillar__header">
+              <h3 class="pillar__title">Conformité</h3>
+              <img src="images/circle-check-regular-full.svg" alt="" aria-hidden="true" class="pillar__check" loading="lazy" width="24" height="24">
+            </div>
+            <div class="pillar__items">
+              <p class="pillar__item">Workflows structurés selon les exigences des NEP</p>
+              <p class="pillar__item">Production documentaire homogène, traçable et adaptée aux standards du cabinet.</p>
+            </div>
+          </article>
+          <article class="pillar pillar--blue">
+            <div class="pillar__header">
+              <h3 class="pillar__title">Sécurité</h3>
+              <img src="images/circle-check-regular-full.svg" alt="" aria-hidden="true" class="pillar__check" loading="lazy" width="24" height="24">
+            </div>
+            <div class="pillar__items">
+              <p class="pillar__item">Cloisonnement strict des données par cabinet</p>
+              <p class="pillar__item">Hébergement en infrastructure souveraine</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Features ── -->
+    <section class="features section" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="features__header text-center">
+          <h2 id="features-heading" class="h2">Fonctionnalités opérationnelles</h2>
+          <p class="body-lg" style="margin-top: var(--space-sm); max-width: 560px; margin-left: auto; margin-right: auto;">CheckIA structure et automatise la formalisation des missions de commissariat aux comptes. Chaque fonctionnalité s'intègre naturellement dans le workflow du cabinet.</p>
+        </div>
+        <div class="features__layout">
+          <div class="features__tabs" role="tablist" aria-label="Fonctionnalités">
+            <button class="features__tab active" role="tab" aria-selected="true" aria-controls="screen-1" data-tab="1">
+              <div class="features__tab-title">Structuration des données mission</div>
+              <div class="features__tab-desc">Extraction et organisation automatisées des informations pertinentes à partir des pièces de mission. Organisation selon des trames homogènes entre dossiers.</div>
+            </button>
+            <button class="features__tab" role="tab" aria-selected="false" aria-controls="screen-2" data-tab="2">
+              <div class="features__tab-title">Génération documentaire standardisée</div>
+              <div class="features__tab-desc">Production de plans de mission, lettres et notes selon une structure uniforme, conforme aux exigences professionnelles et personnalisée aux standards du cabinet.</div>
+            </button>
+            <button class="features__tab" role="tab" aria-selected="false" aria-controls="screen-3" data-tab="3">
+              <div class="features__tab-title">Centralisation sécurisée des éléments probants</div>
+              <div class="features__tab-desc">Regroupement des pièces justificatives dans un environnement sécurisé et cloisonné par cabinet.</div>
+            </button>
+            <button class="features__tab" role="tab" aria-selected="false" aria-controls="screen-4" data-tab="4">
+              <div class="features__tab-title">Suivi et traçabilité</div>
+              <div class="features__tab-desc">Historique clair des validations, versions et avancement des missions.</div>
+            </button>
+          </div>
+          <div class="features__preview">
+            <div id="screen-1" class="features__screen active" role="tabpanel">
+              <img src="images/a.png"
+                   alt="Interface CheckIA — structuration des données mission"
+                   width="800" height="520"
+                   loading="lazy"
+                   srcset="images/a-p-500.png 500w, images/a-p-800.png 800w, images/a-p-1080.png 1080w, images/a.png 3059w"
+                   sizes="(max-width: 900px) 100vw, 640px">
+            </div>
+            <div id="screen-2" class="features__screen" role="tabpanel">
+              <img src="images/b.png"
+                   alt="Interface CheckIA — génération documentaire standardisée"
+                   width="800" height="520"
+                   loading="lazy"
+                   srcset="images/b-p-500.png 500w, images/b-p-800.png 800w, images/b-p-1080.png 1080w, images/b.png 3048w"
+                   sizes="(max-width: 900px) 100vw, 640px">
+            </div>
+            <div id="screen-3" class="features__screen" role="tabpanel">
+              <img src="images/c.png"
+                   alt="Interface CheckIA — centralisation sécurisée des éléments probants"
+                   width="800" height="520"
+                   loading="lazy"
+                   srcset="images/c.png 1600w"
+                   sizes="(max-width: 900px) 100vw, 640px">
+            </div>
+            <div id="screen-4" class="features__screen" role="tabpanel">
+              <img src="images/d.png"
+                   alt="Interface CheckIA — suivi et traçabilité des missions"
+                   width="800" height="520"
+                   loading="lazy"
+                   srcset="images/d.png 1882w"
+                   sizes="(max-width: 900px) 100vw, 640px">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final CTA ── -->
+    <section class="cta-final section" id="demo" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-final__inner">
+          <div class="cta-final__content">
+            <h2 id="cta-heading" class="h2">Découvrez CheckIA en situation réelle</h2>
+            <p class="body-lg">Présentation structurée de la solution et de son intégration dans l'organisation de votre cabinet.</p>
+            <div>
+              <a href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener" class="btn btn-primary" style="background: var(--green-primary); color: var(--black-primary);">
+                Réserver une démonstration
+              </a>
+            </div>
+          </div>
+          <div class="cta-final__img">
+            <img src="images/Group-1700.png"
+                 alt="Aperçu de la plateforme CheckIA en cours d'utilisation"
+                 width="1340" height="820"
+                 loading="lazy"
+                 srcset="images/Group-1700-p-500.png 500w, images/Group-1700-p-800.png 800w, images/Group-1700-p-1080.png 1080w, images/Group-1700.png 1340w"
+                 sizes="(max-width: 900px) 100vw, 560px">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="/" aria-label="CheckIA - Accueil" class="footer__logo">
+          <img src="images/lynth-bw.svg" alt="CheckIA" width="120" height="28" loading="lazy">
+        </a>
+        <nav class="footer__nav" aria-label="Navigation secondaire">
+          <a href="/about.html">À propos</a>
+          <a href="/customer-stories.html">Témoignages</a>
+          <a href="/blog.html">Blog</a>
+          <a href="mailto:contact@checkia.fr">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">CheckIA Inc © 2026</span>
+        <div class="footer__links">
+          <a href="mailto:contact@checkia.fr">contact@checkia.fr</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const burger = document.getElementById('burger');
+    const menu   = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      menu.setAttribute('aria-hidden', !open);
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+    }));
+
+    // Features tabs
+    const tabs    = document.querySelectorAll('.features__tab');
+    const screens = document.querySelectorAll('.features__screen');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const n = tab.dataset.tab;
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        screens.forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById('screen-' + n).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
