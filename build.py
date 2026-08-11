@@ -87,11 +87,9 @@ def load_pages():
 def render_logo():
     return (
         '<a class="logo" href="/" aria-label="CheckIA — accueil">'
-        '<svg viewBox="0 0 132 28" role="img" aria-hidden="true" focusable="false">'
-        '<path d="M13.5 3.2a10.8 10.8 0 1 0 9.4 16.1l-3.5-2a6.8 6.8 0 1 1 0-6.6l3.5-2a10.8 '
-        '10.8 0 0 0-9.4-5.5z" fill="var(--blue)"/>'
-        '<path d="M19.4 9.1l3.5-2 3.6 2v4l-3.6 2-3.5-2z" fill="var(--cyan)"/>'
-        "</svg><span>CheckIA</span></a>"
+        '<img src="/assets/logo-mark.svg" alt="" width="686" height="686" '
+        'decoding="async">'
+        "<span>CheckIA</span></a>"
     )
 
 
