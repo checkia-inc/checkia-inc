@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Démonstration CheckIA — la formalisation des missions CAC en vidéo</title>
+  <meta name="description" content="Découvrez CheckIA en vidéo : structuration des données mission, génération documentaire standardisée et centralisation sécurisée des éléments probants. Réservez ensuite une démonstration personnalisée.">
+
+  <link rel="canonical" href="https://www.checkia.fr/demo/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CheckIA">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://www.checkia.fr/demo/">
+  <meta property="og:title" content="Démonstration CheckIA — la formalisation des missions CAC en vidéo">
+  <meta property="og:description" content="Découvrez CheckIA en vidéo, puis réservez une démonstration personnalisée avec notre équipe.">
+  <meta property="og:image" content="https://www.checkia.fr/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Interface CheckIA de suivi documentaire des missions de commissariat aux comptes">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Démonstration CheckIA — la formalisation des missions CAC en vidéo">
+  <meta name="twitter:description" content="Découvrez CheckIA en vidéo, puis réservez une démonstration personnalisée avec notre équipe.">
+  <meta name="twitter:image" content="https://www.checkia.fr/images/og-image.jpg">
+
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/webclip.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- La miniature et le lecteur ne sont sollicités qu'au clic : on prépare
+       simplement la connexion pour que la lecture démarre sans latence. -->
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/demo.css">
+
+  <!-- La classe « js » active les animations d'apparition. Un chien de garde la
+       retire si main.js n'a pas démarré : le contenu reste alors visible. -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      window.addEventListener("load", function () {
+        if (!window.__checkiaReady) root.classList.remove("js");
+      });
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Démonstration CheckIA — structuration et automatisation documentaire des missions CAC",
+    "description": "Présentation en vidéo de CheckIA : structuration des données mission, génération documentaire standardisée, centralisation sécurisée des éléments probants et suivi des validations.",
+    "thumbnailUrl": "https://www.checkia.fr/images/og-image.jpg",
+    "uploadDate": "2026-08-16",
+    "inLanguage": "fr-FR",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CheckIA",
+      "url": "https://www.checkia.fr/",
+      "logo": "https://www.checkia.fr/images/logo_coor.png"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ================= Navigation ================= -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="/" aria-label="CheckIA — accueil">
+        <img class="nav__logo" src="/images/logo_coor.png" alt="CheckIA" width="1622" height="300">
+      </a>
+      <a class="btn btn--sm" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
+        Réserver un échange
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="demo-hero">
+      <div class="hero__aura" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="wrap">
+        <div class="demo-hero__head">
+          <p class="eyebrow reveal">
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+            Démonstration produit
+          </p>
+
+          <h1 class="h1 reveal" style="--delay:70ms">CheckIA en situation réelle</h1>
+
+          <p class="lead demo-hero__sub reveal" style="--delay:140ms">
+            La formalisation représente plus de la moitié du temps d’une mission.
+            Cette vidéo montre comment CheckIA la structure, l’homogénéise et l’automatise,
+            dans un cadre conforme aux exigences professionnelles.
+          </p>
+
+          <div class="cta-row reveal" style="--delay:210ms">
+            <a class="btn" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
+              Réserver une démonstration
+              <svg class="btn__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="mailto:contact@checkia.fr?subject=Demande%20d%27information%20CheckIA">
+              Nous écrire
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Vidéo (point focal) ================= -->
+    <section class="player-section" id="video">
+      <div class="wrap">
+        <div class="player-shell reveal">
+          <!-- ▼▼ REMPLACER « VIDEO_ID » PAR L'IDENTIFIANT YOUTUBE ▼▼
+               Pour https://www.youtube.com/watch?v=dQw4w9WgXcQ
+               l'identifiant est : dQw4w9WgXcQ
+               Deux emplacements à renseigner : data-video-id ci-dessous
+               et le lien de repli <noscript> quelques lignes plus bas. -->
+          <div class="player" id="player" data-video-id="VIDEO_ID"
+               data-title="Démonstration CheckIA">
+            <button class="player__facade" type="button" aria-label="Lire la démonstration CheckIA">
+              <img class="player__thumb" alt="" aria-hidden="true" decoding="async">
+              <span class="player__veil" aria-hidden="true"></span>
+              <span class="player__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.3-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14Z"/></svg>
+              </span>
+              <span class="player__label">Lancer la démonstration</span>
+            </button>
+
+            <!-- Repli sans JavaScript : lien direct vers la vidéo.
+                 Penser à y reporter le même identifiant. -->
+            <noscript>
+              <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+                      title="Démonstration CheckIA"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen></iframe>
+            </noscript>
+          </div>
+        </div>
+
+        <p class="player-note reveal" style="--delay:90ms">
+          Vous préférez un parcours commenté sur vos propres dossiers ?
+          <a href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener"><strong>Réservez un échange de 30 minutes.</strong></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= Sommaire de la démonstration ================= -->
+    <section class="section section--tint">
+      <div class="wrap">
+        <div class="section-head center">
+          <h2 class="h2 reveal">Ce que montre la démonstration</h2>
+          <p class="lead reveal" style="--delay:80ms">
+            Le parcours complet d’une mission, de la reprise des pièces jusqu’au suivi des validations.
+          </p>
+        </div>
+
+        <div class="chapters">
+          <article class="chapter reveal">
+            <span class="chapter__num" aria-hidden="true">1</span>
+            <h3 class="h3">Structuration des données mission</h3>
+            <p class="body">Extraction des informations pertinentes à partir des pièces de mission et organisation selon des trames homogènes entre dossiers.</p>
+          </article>
+
+          <article class="chapter reveal" style="--delay:80ms">
+            <span class="chapter__num" aria-hidden="true">2</span>
+            <h3 class="h3">Génération documentaire standardisée</h3>
+            <p class="body">Plans de mission, lettres et notes produits selon une structure uniforme, conforme aux exigences professionnelles et personnalisée aux standards du cabinet.</p>
+          </article>
+
+          <article class="chapter reveal" style="--delay:160ms">
+            <span class="chapter__num" aria-hidden="true">3</span>
+            <h3 class="h3">Centralisation des éléments probants</h3>
+            <p class="body">Regroupement des pièces justificatives dans un environnement sécurisé et cloisonné par cabinet, prêt pour la revue interne.</p>
+          </article>
+
+          <article class="chapter reveal" style="--delay:240ms">
+            <span class="chapter__num" aria-hidden="true">4</span>
+            <h3 class="h3">Suivi et traçabilité</h3>
+            <p class="body">Historique clair des validations, des versions et de l’avancement. Le commissaire aux comptes conserve la validation finale et la responsabilité.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Piliers ================= -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head center">
+          <h2 class="h2 reveal">Un outil conçu pour la pratique<br>du commissariat aux comptes</h2>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar pillar--a reveal">
+            <div class="pillar__head">
+              <span class="h3">Expertise</span>
+              <img src="/images/circle-check-regular-full.svg" width="22" height="22" alt="" aria-hidden="true">
+            </div>
+            <p>Conçu par des commissaires aux comptes</p>
+            <p>Développé en collaboration avec des experts en intelligence artificielle français</p>
+          </article>
+
+          <article class="pillar pillar--b reveal" style="--delay:90ms">
+            <div class="pillar__head">
+              <span class="h3">Conformité</span>
+              <img src="/images/circle-check-regular-full.svg" width="22" height="22" alt="" aria-hidden="true">
+            </div>
+            <p>Workflows structurés selon les exigences des NEP</p>
+            <p>Production documentaire homogène, traçable et adaptée aux standards du cabinet</p>
+          </article>
+
+          <article class="pillar pillar--c reveal" style="--delay:180ms">
+            <div class="pillar__head">
+              <span class="h3">Sécurité</span>
+              <img src="/images/circle-check-regular-full.svg" width="22" height="22" alt="" aria-hidden="true">
+            </div>
+            <p>Cloisonnement strict des données par cabinet</p>
+            <p>Hébergement en infrastructure souveraine</p>
+          </article>
+        </div>
+
+        <div class="trust reveal">
+          <span class="trust__item">
+            <img src="/images/circle-check-regular-full.svg" width="17" height="17" alt="" aria-hidden="true">
+            Conçu en France par des commissaires aux comptes
+          </span>
+          <span class="trust__item">
+            <img src="/images/circle-check-regular-full.svg" width="17" height="17" alt="" aria-hidden="true">
+            Alignement sur les NEP
+          </span>
+          <span class="trust__item">
+            <img src="/images/circle-check-regular-full.svg" width="17" height="17" alt="" aria-hidden="true">
+            Infrastructure souveraine
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Appel à l'action ================= -->
+    <section class="cta cta--demo" id="contact">
+      <div class="cta__aura" aria-hidden="true"></div>
+      <div class="cta__inner">
+        <div class="cta__head">
+          <h2 class="h2 reveal">Parlons de vos missions</h2>
+          <p class="body reveal" style="--delay:80ms">
+            Trente minutes pour situer CheckIA dans l’organisation de votre cabinet,
+            sur vos types de missions et vos trames existantes.
+          </p>
+        </div>
+
+        <div class="reveal" style="--delay:150ms">
+          <a class="btn" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
+            Réserver une démonstration
+            <svg class="btn__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <p class="cta__note reveal" style="--delay:210ms">
+          Ou écrivez-nous à <a href="mailto:contact@checkia.fr?subject=Demande%20d%27information%20CheckIA">contact@checkia.fr</a>
+        </p>
+
+        <img class="cta__shot reveal" style="--delay:280ms" src="/images/produit-cta.png" width="1340" height="721" alt="Liste des missions dans CheckIA : client, type, signataire, calendrier, honoraires et avancement." loading="lazy" decoding="async">
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Pied de page ================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <a href="/" aria-label="CheckIA — accueil">
+          <img class="footer__logo" src="/images/logo_coor.png" alt="CheckIA" width="1622" height="300" loading="lazy">
+        </a>
+        <nav class="footer__links">
+          <a href="/">Accueil</a>
+          <a href="mailto:contact@checkia.fr?subject=contact%40checkia.fr">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__bottom small">CheckIA Inc © 2026</div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+
+  <!-- Lecteur : façade légère, la vidéo YouTube n'est chargée qu'au clic. -->
+  <script>
+    (function () {
+      "use strict";
+
+      var player = document.getElementById("player");
+      if (!player) return;
+
+      var id = (player.dataset.videoId || "").trim();
+      // Tant que l'identifiant n'est pas renseigné, on n'appelle pas YouTube.
+      if (id === "VIDEO_ID") id = "";
+
+      var facade = player.querySelector(".player__facade");
+      var thumb = player.querySelector(".player__thumb");
+
+      // Miniature YouTube : on tente la haute définition, puis un repli.
+      // Si aucune n'existe (identifiant non encore renseigné), le dégradé
+      // sombre du lecteur reste visible : rien ne casse.
+      if (thumb && id) {
+        var sources = [
+          "https://i.ytimg.com/vi/" + id + "/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg"
+        ];
+        var step = 0;
+
+        thumb.addEventListener("load", function () {
+          // Les miniatures de repli de YouTube font 120 px de large.
+          if (thumb.naturalWidth > 200) thumb.classList.add("is-loaded");
+          else if (++step < sources.length) thumb.src = sources[step];
+        });
+
+        thumb.addEventListener("error", function () {
+          if (++step < sources.length) thumb.src = sources[step];
+        });
+
+        thumb.src = sources[0];
+      }
+
+      if (!facade) return;
+
+      facade.addEventListener("click", function () {
+        if (!id) return;
+
+        var frame = document.createElement("iframe");
+        frame.src =
+          "https://www.youtube-nocookie.com/embed/" +
+          encodeURIComponent(id) +
+          "?autoplay=1&rel=0&modestbranding=1&playsinline=1&hl=fr&cc_lang_pref=fr";
+        frame.title = player.dataset.title || "Vidéo";
+        frame.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        frame.allowFullscreen = true;
+        frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+
+        player.replaceChildren(frame);
+      });
+    })();
+  </script>
+</body>
+</html>
