@@ -32,8 +32,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- La classe « js » active les animations d'apparition. Un chien de garde la
@@ -99,9 +99,14 @@
       <a href="/" aria-label="CheckIA — accueil">
         <img class="nav__logo" src="images/logo_coor.png" alt="CheckIA" width="1622" height="300">
       </a>
-      <a class="btn btn--sm" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
-        Réserver une démonstration
-      </a>
+      <div class="nav__actions">
+        <nav class="nav__links">
+          <a href="mailto:contact@checkia.fr?subject=contact%40checkia.fr">Contact</a>
+        </nav>
+        <a class="btn btn--sm" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
+          Réserver une démonstration
+        </a>
+      </div>
     </div>
   </header>
 
@@ -115,11 +120,9 @@
         <div class="hero__head">
           <h1 class="h1 reveal">Plateforme de structuration et d’automatisation documentaire des missions CAC</h1>
 
-          <p class="lead hero__sub reveal" style="--delay:90ms">La formalisation représente plus de la moitié du temps d’une mission.<br>CheckIA la structure, l’homogénéise et l’automatise<br>dans un cadre conforme aux exigences professionnelles.</p>
+          <p class="lead hero__sub reveal" style="--delay:80ms">La formalisation représente plus de la moitié du temps d’une mission. CheckIA la structure, l’homogénéise et l’automatise dans un cadre conforme aux exigences professionnelles.</p>
 
-          <p class="hero__meta reveal" style="--delay:160ms">Conçu en France par des commissaires aux comptes et des experts en intelligence artificielle.<br><br>Sécurité des données <em>·</em> Conformité CNCC <em>· </em> Infrastructure souveraine</p>
-
-          <div class="hero__cta reveal" style="--delay:230ms">
+          <div class="hero__cta reveal" style="--delay:150ms">
             <a class="btn" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
               Réserver une démonstration
               <svg class="btn__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -127,37 +130,56 @@
           </div>
         </div>
 
-        <div class="hero__shots reveal" style="--delay:300ms">
-          <img class="hero__shot" src="images/1.png" width="640" height="902" alt="Formulaire de cadrage d’une mission CheckIA : nom d’entreprise, type de mission, temps prévu et honoraires." fetchpriority="high" decoding="async">
-          <img class="hero__shot" src="images/2.png" width="641" height="902" alt="Tableau de bord CheckIA listant les documents mission et les documents client d’un dossier." decoding="async">
-          <img class="hero__shot" src="images/3.png" width="640" height="902" alt="Suivi des échéances et des statuts de signature des documents d’une mission CheckIA." decoding="async">
+        <div class="hero__proof reveal" style="--delay:210ms">
+          <p>Conçu en France par des commissaires aux comptes et des experts en intelligence artificielle.</p>
+          <div class="chips">
+            <span class="chip">Sécurité des données</span>
+            <span class="chip">Conformité CNCC</span>
+            <span class="chip">Infrastructure souveraine</span>
+          </div>
+        </div>
+
+        <div class="hero__shots reveal" style="--delay:280ms">
+          <div class="hero__shot">
+            <img src="images/1.png" width="640" height="902" alt="Formulaire de cadrage d’une mission CheckIA : nom d’entreprise, type de mission, temps prévu et honoraires." fetchpriority="high" decoding="async">
+          </div>
+          <div class="hero__shot">
+            <img src="images/2.png" width="641" height="902" alt="Tableau de bord CheckIA listant les documents mission et les documents client d’un dossier." decoding="async">
+          </div>
+          <div class="hero__shot">
+            <img src="images/3.png" width="640" height="902" alt="Suivi des échéances et des statuts de signature des documents d’une mission CheckIA." decoding="async">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= Problème ================= -->
+    <!-- ================= 01 · Problème ================= -->
     <section class="section section--tint">
       <div class="wrap">
-        <div class="section-head center">
-          <h2 class="h2 reveal">La formalisation représente la majorité du temps d’une mission CAC</h2>
-          <p class="lead reveal" style="--delay:80ms">Cette production documentaire est :<br><strong>Répétitive  <em>· </em> Manuelle <em>·  </em>Chronophage</strong></p>
+        <div class="section-head">
+          <p class="eyebrow reveal"><span class="eyebrow__dot" aria-hidden="true"></span>01</p>
+          <h2 class="h2 reveal" style="--delay:60ms">La formalisation représente la majorité du temps d’une mission CAC</h2>
+          <p class="lead reveal" style="--delay:120ms">Cette production documentaire est :<br><strong>Répétitive  <em>· </em> Manuelle <em>·  </em>Chronophage</strong></p>
         </div>
 
         <div class="cards">
           <article class="card reveal">
-            <div class="card__icon"><img src="images/x30.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+            <div class="card__icon"><span class="i" style="--src:url(images/x30.svg)" aria-hidden="true"></span></div>
+            <span class="card__num">01</span>
             <h3 class="h3"> Une charge excessive de formalisation</h3>
             <p class="body">La production documentaire représente la majorité du temps d’une mission. Rédaction, reformulation et adaptation mobilisent un temps significatif au détriment de l’analyse et de la supervision.</p>
           </article>
 
-          <article class="card reveal" style="--delay:90ms">
-            <div class="card__icon"><img src="images/clock30.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+          <article class="card reveal" style="--delay:80ms">
+            <div class="card__icon"><span class="i" style="--src:url(images/clock30.svg)" aria-hidden="true"></span></div>
+            <span class="card__num">02</span>
             <h3 class="h3"> Un risque d’erreur humaine structurel</h3>
             <p class="body">Plus un processus est manuel, plus il expose à des variations et oublis. Ces écarts fragilisent la revue interne et les contrôles qualité.</p>
           </article>
 
-          <article class="card reveal" style="--delay:180ms">
-            <div class="card__icon"><img src="images/search30.svg" width="30" height="30" alt="" aria-hidden="true"></div>
+          <article class="card reveal" style="--delay:160ms">
+            <div class="card__icon"><span class="i" style="--src:url(images/search30.svg)" aria-hidden="true"></span></div>
+            <span class="card__num">03</span>
             <h3 class="h3">Des pièces justificatives dispersées</h3>
             <p class="body">Les pièces justificatives sont souvent réparties entre différents supports et outils. Leur recherche et leur consolidation deviennent chronophages et sources de fragilité organisationnelle.</p>
           </article>
@@ -165,109 +187,103 @@
       </div>
     </section>
 
-    <!-- ================= Solution ================= -->
-    <section class="section">
-      <div class="wrap split">
-        <div class="split__body">
-          <h2 class="h2 reveal">La solution : Automatiser et sécuriser la formalisation des missions</h2>
+    <!-- ================= 02 · Solution ================= -->
+    <section class="section section--edge">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow reveal"><span class="eyebrow__dot" aria-hidden="true"></span>02</p>
 
-          <p class="body reveal" style="--delay:80ms">CheckIA structure et automatise la production documentaire dans un cadre conforme aux exigences professionnelles. Il réduit significativement le temps consacré à la formalisation, tout en renforçant la cohérence et la traçabilité du dossier, sans intervenir sur le jugement du commissaire aux comptes qui reste maître de la mission.</p>
+          <h2 class="h2 reveal" style="--delay:60ms">La solution : Automatiser et sécuriser la formalisation des missions</h2>
 
-          <div class="feature-list reveal" style="--delay:140ms">
-            <div class="feature-list__item">
-              <div class="feature-list__head">
-                <img src="images/folder-open-regular-full.svg" width="16" height="16" alt="" aria-hidden="true">
-                <strong>Structuration automatisée des données mission</strong>
-              </div>
-              <p class="body">Extraction des informations pertinentes à partir des pièces de mission. Organisation selon des trames homogènes et cohérentes entre dossiers.</p>
-            </div>
-
-            <div class="feature-list__item">
-              <div class="feature-list__head">
-                <img src="images/arrows-spin-solid-full.svg" width="16" height="16" alt="" aria-hidden="true">
-                <strong>Génération documentaire standardisée</strong>
-              </div>
-              <p class="body">Production de plans de mission, lettres et notes, selon une structure uniforme, conforme aux exigences professionnelles et personnalisée aux standards du cabinet. Réduction des variations formelles.</p>
-            </div>
-
-            <div class="feature-list__item">
-              <div class="feature-list__head">
-                <img src="images/folder-open-regular-full.svg" width="16" height="16" alt="" aria-hidden="true">
-                <strong>Centralisation sécurisée des éléments probants</strong>
-              </div>
-              <p class="body">Regroupement des pièces justificatives dans un environnement sécurisé et cloisonné. Facilitation de la revue interne et des contrôles qualité.</p>
-            </div>
-
-            <div class="feature-list__item">
-              <div class="feature-list__head">
-                <img src="images/circle-check-regular-full.svg" width="16" height="16" alt="" aria-hidden="true">
-                <strong>Réduction des écarts avant revue</strong>
-              </div>
-              <p class="body">L’automatisation réduit les incohérences structurelles. Le commissaire aux comptes conserve la validation finale et la responsabilité.</p>
-            </div>
-          </div>
+          <p class="lead reveal" style="--delay:110ms">CheckIA structure et automatise la production documentaire dans un cadre conforme aux exigences professionnelles. Il réduit significativement le temps consacré à la formalisation, tout en renforçant la cohérence et la traçabilité du dossier, sans intervenir sur le jugement du commissaire aux comptes qui reste maître de la mission.</p>
         </div>
 
-        <div class="frame reveal" style="--delay:120ms">
-          <!-- Visuel de marque abstrait : décoratif, sans contenu informatif. -->
-          <img src="images/produit-dossier.jpg" width="1024" height="1024" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <div class="feature-grid">
+          <div class="feature reveal">
+            <div class="feature__head">
+              <span class="i" style="--src:url(images/folder-open-regular-full.svg)" aria-hidden="true"></span>
+              <strong>Structuration automatisée des données mission</strong>
+            </div>
+            <p class="body">Extraction des informations pertinentes à partir des pièces de mission. Organisation selon des trames homogènes et cohérentes entre dossiers.</p>
+          </div>
+
+          <div class="feature reveal" style="--delay:70ms">
+            <div class="feature__head">
+              <span class="i" style="--src:url(images/arrows-spin-solid-full.svg)" aria-hidden="true"></span>
+              <strong>Génération documentaire standardisée</strong>
+            </div>
+            <p class="body">Production de plans de mission, lettres et notes, selon une structure uniforme, conforme aux exigences professionnelles et personnalisée aux standards du cabinet. Réduction des variations formelles.</p>
+          </div>
+
+          <div class="feature reveal" style="--delay:140ms">
+            <div class="feature__head">
+              <span class="i" style="--src:url(images/folder-open-regular-full.svg)" aria-hidden="true"></span>
+              <strong>Centralisation sécurisée des éléments probants</strong>
+            </div>
+            <p class="body">Regroupement des pièces justificatives dans un environnement sécurisé et cloisonné. Facilitation de la revue interne et des contrôles qualité.</p>
+          </div>
+
+          <div class="feature reveal" style="--delay:210ms">
+            <div class="feature__head">
+              <span class="i" style="--src:url(images/circle-check-regular-full.svg)" aria-hidden="true"></span>
+              <strong>Réduction des écarts avant revue</strong>
+            </div>
+            <p class="body">L’automatisation réduit les incohérences structurelles. Le commissaire aux comptes conserve la validation finale et la responsabilité.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= Chiffres ================= -->
+    <!-- ================= 03 · Chiffres ================= -->
     <section class="section section--tint">
       <div class="wrap">
-        <div class="stats">
-          <div class="stat reveal">
+        <div class="stats reveal">
+          <div class="stat">
             <span class="stat__num">2</span>
             <p class="body">Familles de missions couvertes :<br>Apports et Transformation</p>
           </div>
 
-          <div class="stat reveal" style="--delay:90ms">
+          <div class="stat">
             <span class="stat__num">100%</span>
             <p class="body">Alignés sur les NEP. Workflows structurés selon les exigences professionnelles.</p>
           </div>
-
-          <div class="stat stat--wide reveal" style="--delay:180ms">
-            <h3 class="h3">Un outil conçu pour la pratique du commissariat aux comptes</h3>
-          </div>
         </div>
 
-        <p class="body center stats__note reveal">CheckIA s’intègre dans l’organisation du cabinet.<br>Il ne modifie ni le rôle ni la responsabilité du commissaire aux comptes.</p>
+        <p class="body stats__note reveal" style="--delay:80ms">CheckIA s’intègre dans l’organisation du cabinet.<br>Il ne modifie ni le rôle ni la responsabilité du commissaire aux comptes.</p>
       </div>
     </section>
 
-    <!-- ================= Piliers ================= -->
-    <section class="section">
+    <!-- ================= 04 · Piliers ================= -->
+    <section class="section section--edge">
       <div class="wrap">
-        <div class="section-head center">
-          <h2 class="h2 reveal">Un outil conçu pour la pratique<br>du commissariat aux comptes</h2>
+        <div class="section-head section-head--center">
+          <p class="eyebrow reveal">04</p>
+          <h2 class="h2 reveal" style="--delay:60ms">Un outil conçu pour la pratique du commissariat aux comptes</h2>
         </div>
 
         <div class="pillars">
-          <article class="pillar pillar--a reveal">
+          <article class="pillar reveal">
             <div class="pillar__head">
               <span class="h3">Expertise</span>
-              <img src="images/circle-check-regular-full.svg" width="22" height="22" alt="" aria-hidden="true">
+              <span class="i" style="--src:url(images/circle-check-regular-full.svg)" aria-hidden="true"></span>
             </div>
             <p>Conçu par des commissaires aux comptes</p>
             <p>Développé en collaboration avec des experts en intelligence artificielle français</p>
           </article>
 
-          <article class="pillar pillar--b reveal" style="--delay:90ms">
+          <article class="pillar reveal" style="--delay:80ms">
             <div class="pillar__head">
               <span class="h3">Conformité</span>
-              <img src="images/circle-check-regular-full.svg" width="22" height="22" alt="" aria-hidden="true">
+              <span class="i" style="--src:url(images/circle-check-regular-full.svg)" aria-hidden="true"></span>
             </div>
             <p>Workflows structurés selon les exigences des NEP</p>
             <p>Production documentaire homogène, traçable et adaptée aux standards du cabinet.</p>
           </article>
 
-          <article class="pillar pillar--c reveal" style="--delay:180ms">
+          <article class="pillar reveal" style="--delay:160ms">
             <div class="pillar__head">
               <span class="h3">Sécurité</span>
-              <img src="images/circle-check-regular-full.svg" width="22" height="22" alt="" aria-hidden="true">
+              <span class="i" style="--src:url(images/circle-check-regular-full.svg)" aria-hidden="true"></span>
             </div>
             <p>Cloisonnement strict des données par cabinet</p>
             <p>Hébergement en infrastructure souveraine</p>
@@ -276,12 +292,13 @@
       </div>
     </section>
 
-    <!-- ================= Fonctionnalités ================= -->
+    <!-- ================= 05 · Fonctionnalités ================= -->
     <section class="section section--tint">
       <div class="wrap">
-        <div class="section-head center">
-          <h2 class="h2 reveal">Fonctionnalités opérationnelles</h2>
-          <p class="body reveal" style="--delay:80ms">CheckIA structure et automatise la formalisation des missions de commissariat aux comptes. Chaque fonctionnalité s’intègre naturellement dans le workflow du cabinet.</p>
+        <div class="section-head">
+          <p class="eyebrow reveal"><span class="eyebrow__dot" aria-hidden="true"></span>05</p>
+          <h2 class="h2 reveal" style="--delay:60ms">Fonctionnalités opérationnelles</h2>
+          <p class="lead reveal" style="--delay:120ms">CheckIA structure et automatise la formalisation des missions de commissariat aux comptes. Chaque fonctionnalité s’intègre naturellement dans le workflow du cabinet.</p>
         </div>
 
         <div class="tabs reveal">
@@ -331,20 +348,20 @@
     <!-- ================= Appel à l'action ================= -->
     <section class="cta" id="CTA">
       <div class="cta__aura" aria-hidden="true"></div>
-      <div class="cta__inner">
+      <div class="wrap cta__inner">
         <div class="cta__head">
           <h2 class="h2 reveal">Découvrez CheckIA en situation réelle</h2>
-          <p class="body reveal" style="--delay:80ms">Présentation structurée de la solution et de son intégration dans l’organisation de votre cabinet.</p>
+          <p class="body reveal" style="--delay:70ms">Présentation structurée de la solution et de son intégration dans l’organisation de votre cabinet.</p>
         </div>
 
-        <div class="reveal" style="--delay:150ms">
+        <div class="reveal" style="--delay:140ms">
           <a class="btn" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
             Réserver une démonstration
             <svg class="btn__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <img class="cta__shot reveal" style="--delay:220ms" src="images/produit-cta.png" width="1340" height="721" alt="Liste des missions dans CheckIA : client, type, signataire, calendrier, honoraires et avancement." loading="lazy" decoding="async">
+        <img class="cta__shot reveal" style="--delay:200ms" src="images/produit-cta.png" width="1340" height="721" alt="Liste des missions dans CheckIA : client, type, signataire, calendrier, honoraires et avancement." loading="lazy" decoding="async">
       </div>
     </section>
   </main>
