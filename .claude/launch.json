@@ -5,13 +5,9 @@
       "name": "checkia-inc",
       "runtimeExecutable": "python3",
       "runtimeArgs": [
-        "-m",
-        "http.server",
-        "8765",
-        "--bind",
-        "127.0.0.1",
-        "--directory",
-        "/Users/chloealpert/Documents/GitHub/checkia-inc"
+        "-I",
+        "-c",
+        "import functools, http.server, socketserver; H = functools.partial(http.server.SimpleHTTPRequestHandler, directory='/Users/chloealpert/Documents/GitHub/checkia-inc'); socketserver.TCPServer.allow_reuse_address = True; socketserver.TCPServer(('127.0.0.1', 8765), H).serve_forever()"
       ],
       "port": 8765
     }
