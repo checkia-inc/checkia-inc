@@ -47,13 +47,14 @@
 
 .demo-hero__sub { max-width: 40rem; }
 
-/* Rappel de responsabilité : présent mais volontairement en retrait. */
+/* Rappel de responsabilité : même gris que l'accroche (var(--grey-1),
+   hérité de .lead), la mise en retrait passe par la taille seule. */
 .demo-hero__note {
   max-width: 38rem;
   margin-top: -0.55rem;
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: var(--muted);
+  color: var(--grey-1);
   text-wrap: pretty;
 }
 
