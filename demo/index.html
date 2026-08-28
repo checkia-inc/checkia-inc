@@ -102,9 +102,13 @@
           <h1 class="h1 reveal" style="--delay:70ms">Découvrez CheckIA en vidéo</h1>
 
           <p class="lead demo-hero__sub reveal" style="--delay:140ms">
-            La formalisation représente plus de la moitié du temps d’une mission.
-            CheckIA la structure, l’homogénéise et l’automatise dans un cadre conforme
-            aux exigences professionnelles.
+            CheckIA réduit de 80 % le temps passé sur la formalisation et limite
+            les erreurs humaines, dans un cadre conforme aux exigences professionnelles.
+          </p>
+
+          <p class="demo-hero__note reveal" style="--delay:180ms">
+            Le commissaire aux comptes reste pleinement maître de sa mission,
+            de son analyse et de ses conclusions.
           </p>
 
           <div class="cta-row reveal" style="--delay:210ms">
@@ -141,7 +145,7 @@
             <!-- Repli sans JavaScript : lecteur chargé directement.
                  Penser à y reporter le même identifiant. -->
             <noscript>
-              <iframe src="https://www.youtube-nocookie.com/embed/IwGqX8ycBsY?rel=0&amp;modestbranding=1&amp;hl=fr"
+              <iframe src="https://www.youtube-nocookie.com/embed/IwGqX8ycBsY?rel=0&amp;modestbranding=1&amp;hl=fr&amp;cc_load_policy=0"
                       title="CheckIA — l’IA au service des missions spécifiques du commissaire aux comptes"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerpolicy="strict-origin-when-cross-origin"
@@ -341,7 +345,7 @@
         frame.src =
           "https://www.youtube-nocookie.com/embed/" +
           encodeURIComponent(id) +
-          "?autoplay=1&rel=0&modestbranding=1&playsinline=1&hl=fr&cc_lang_pref=fr";
+          "?autoplay=1&rel=0&modestbranding=1&playsinline=1&hl=fr&cc_lang_pref=fr&cc_load_policy=0";
         frame.title = player.dataset.title || "Vidéo";
         frame.allow =
           "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";

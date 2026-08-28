@@ -47,6 +47,16 @@
 
 .demo-hero__sub { max-width: 40rem; }
 
+/* Rappel de responsabilité : présent mais volontairement en retrait. */
+.demo-hero__note {
+  max-width: 38rem;
+  margin-top: -0.55rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
 /* Groupe de boutons : principal + secondaire */
 .cta-row {
   display: flex;
