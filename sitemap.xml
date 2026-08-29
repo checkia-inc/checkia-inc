@@ -42,22 +42,4 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.checkia.fr/blog/futur-de-l-audit/ia-commissariat-aux-comptes/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.checkia.fr/blog/nouveautes-produit/generation-documentaire-standardisee/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 </urlset>

@@ -78,12 +78,7 @@
         "name": "Blog CheckIA",
         "description": "Analyses, nouveautés produit et témoignages en vidéo sur la transformation du commissariat aux comptes et l'automatisation documentaire des missions CAC.",
         "inLanguage": "fr-FR",
-        "publisher": { "@id": "https://www.checkia.fr/#organization" },
-        "blogPost": [
-          { "@id": "https://www.checkia.fr/blog/futur-de-l-audit/ia-commissariat-aux-comptes/#article" },
-          { "@id": "https://www.checkia.fr/blog/nouveautes-produit/generation-documentaire-standardisee/#article" },
-          { "@id": "https://www.checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/#article" }
-        ]
+        "publisher": { "@id": "https://www.checkia.fr/#organization" }
       },
       {
         "@type": "BreadcrumbList",
@@ -139,78 +134,45 @@
       </div>
     </section>
 
-    <!-- ================= À la une ================= -->
-    <section class="section">
-      <div class="wrap">
-        <div class="listhead reveal">
-          <h2 class="h2">À la une</h2>
-        </div>
-
-        <a class="featured reveal" style="--delay:60ms" href="/blog/futur-de-l-audit/ia-commissariat-aux-comptes/">
-          <div class="cover">
-            <img src="/images/og-image.jpg" width="1200" height="630" alt="Interface CheckIA de suivi documentaire des missions de commissariat aux comptes." fetchpriority="high" decoding="async">
-            <span class="cover__badge">12&nbsp;min</span>
-          </div>
-          <article class="featured__body">
-            <p class="postmeta">
-              <span class="postmeta__serie">Le futur de l'audit</span>
-              <span class="postmeta__sep" aria-hidden="true">·</span>
-              <time datetime="2026-08-27">27 août 2026</time>
-              <span class="postmeta__sep" aria-hidden="true">·</span>
-              <span>Vidéo + article</span>
-            </p>
-            <h3 class="featured__title">L'IA va-t-elle transformer le commissariat aux comptes&nbsp;? Ce qui change vraiment</h3>
-            <p class="body">La formalisation absorbe plus de la moitié du temps des missions. L'intelligence artificielle ne remplace pas le jugement professionnel&nbsp;: elle libère du temps pour l'exercer. Analyse en vidéo et en texte.</p>
-            <p class="postmeta"><span>Lecture&nbsp;: 8&nbsp;min</span></p>
-          </article>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================= Derniers articles ================= -->
+    <!-- ================= Articles =================
+         Blog en ligne sans articles pour le moment : les gabarits d'articles
+         restent dans le dépôt (voir blog/README.md). Au premier article
+         publié, remplacer l'état vide ci-dessous par les sections
+         « À la une » (.featured) et « Derniers articles » (.postgrid),
+         d'après le modèle de carte commenté plus bas. -->
     <section class="section section--tint">
       <div class="wrap">
         <div class="listhead reveal">
-          <h2 class="h2">Derniers articles</h2>
+          <h2 class="h2">Premiers articles à venir</h2>
         </div>
+
+        <div class="emptystate reveal">
+          <p><strong>Les premiers articles arrivent.</strong><br>Analyses, nouveautés produit et témoignages en vidéo sont en préparation.</p>
+        </div>
+
+        <!-- MODÈLE DE CARTE — dupliquer ce bloc (dans une .postgrid) pour
+             chaque nouvel article. Penser à : href, image (16:9 de préférence),
+             série, date (datetime ISO + date en toutes lettres), titre,
+             extrait de 1 à 2 phrases. Pour un article vidéo, ajouter dans
+             .cover : <span class="cover__badge">MM min</span>
 
         <div class="postgrid">
-          <a class="postcard reveal" href="/blog/nouveautes-produit/generation-documentaire-standardisee/">
+          <a class="postcard reveal" href="/blog/[serie]/[slug]/">
             <div class="cover">
-              <img src="/images/b.png" width="1800" height="1268" alt="Écran CheckIA confirmant que les documents de mission sont prêts, génération terminée." loading="lazy" decoding="async">
+              <img src="/images/blog/[vignette].jpg" width="1200" height="630" alt="[Description de l'image]" loading="lazy" decoding="async">
             </div>
             <div class="postcard__body">
               <p class="postmeta">
-                <span class="postmeta__serie">Nouveautés produit</span>
+                <span class="postmeta__serie">[Série]</span>
                 <span class="postmeta__sep" aria-hidden="true">·</span>
-                <time datetime="2026-08-20">20 août 2026</time>
+                <time datetime="[AAAA-MM-JJ]">[date]</time>
               </p>
-              <h3 class="postcard__title">Génération documentaire standardisée&nbsp;: comment CheckIA produit vos plans de mission</h3>
-              <p class="body">Plans de mission, lettres et notes générés selon une structure uniforme, conforme aux exigences professionnelles et personnalisée aux standards du cabinet.</p>
+              <h3 class="postcard__title">[Titre de l'article]</h3>
+              <p class="body">[Extrait de 1 à 2 phrases.]</p>
             </div>
           </a>
-
-          <a class="postcard reveal" style="--delay:80ms" href="/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/">
-            <div class="cover">
-              <img src="/images/produit-cta.png" width="1340" height="721" alt="Liste des missions dans CheckIA : client, type, signataire, calendrier, honoraires et avancement." loading="lazy" decoding="async">
-            </div>
-            <div class="postcard__body">
-              <p class="postmeta">
-                <span class="postmeta__serie">Vie de l'entreprise</span>
-                <span class="postmeta__sep" aria-hidden="true">·</span>
-                <time datetime="2026-08-13">13 août 2026</time>
-              </p>
-              <h3 class="postcard__title">Pourquoi nous avons créé CheckIA</h3>
-              <p class="body">CheckIA est né d'un constat partagé par des commissaires aux comptes et des experts en intelligence artificielle&nbsp;: la formalisation mérite mieux que du temps perdu.</p>
-            </div>
-          </a>
-
-          <!-- MODÈLE DE CARTE — dupliquer ce bloc pour chaque nouvel article.
-               Penser à : href, image (16:9 de préférence), série, date (datetime
-               ISO + date en toutes lettres), titre, extrait de 1 à 2 phrases.
-               Pour un article vidéo, ajouter dans .cover :
-               <span class="cover__badge">MM min</span> -->
         </div>
+        -->
       </div>
     </section>
 

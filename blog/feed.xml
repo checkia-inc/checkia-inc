@@ -5,34 +5,18 @@
     <link>https://www.checkia.fr/blog/</link>
     <description>Analyses, nouveautés produit et témoignages en vidéo sur la transformation du commissariat aux comptes et l'automatisation documentaire des missions CAC.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Thu, 27 Aug 2026 09:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2026 09:00:00 +0200</lastBuildDate>
     <atom:link href="https://www.checkia.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <!-- Aucun article publié pour le moment. Modèle d'item :
     <item>
-      <title>L'IA va-t-elle transformer le commissariat aux comptes ? Ce qui change vraiment</title>
-      <link>https://www.checkia.fr/blog/futur-de-l-audit/ia-commissariat-aux-comptes/</link>
-      <guid>https://www.checkia.fr/blog/futur-de-l-audit/ia-commissariat-aux-comptes/</guid>
-      <pubDate>Thu, 27 Aug 2026 09:00:00 +0200</pubDate>
-      <category>Le futur de l'audit</category>
-      <description>La formalisation absorbe plus de la moitié du temps d'une mission CAC. Ce que l'IA automatise vraiment, ce qui reste du ressort du commissaire aux comptes, et comment s'y préparer. Analyse en vidéo et en texte.</description>
+      <title>[Titre de l'article]</title>
+      <link>https://www.checkia.fr/blog/[serie]/[slug]/</link>
+      <guid>https://www.checkia.fr/blog/[serie]/[slug]/</guid>
+      <pubDate>[Jour, JJ Mois AAAA 09:00:00 +0200]</pubDate>
+      <category>[Série]</category>
+      <description>[Description de 1 à 2 phrases.]</description>
     </item>
-
-    <item>
-      <title>Génération documentaire standardisée : comment CheckIA produit vos plans de mission</title>
-      <link>https://www.checkia.fr/blog/nouveautes-produit/generation-documentaire-standardisee/</link>
-      <guid>https://www.checkia.fr/blog/nouveautes-produit/generation-documentaire-standardisee/</guid>
-      <pubDate>Thu, 20 Aug 2026 09:00:00 +0200</pubDate>
-      <category>Nouveautés produit</category>
-      <description>Plans de mission, lettres et notes générés selon une structure uniforme, conforme aux exigences professionnelles et personnalisée aux standards du cabinet. Visite guidée.</description>
-    </item>
-
-    <item>
-      <title>Pourquoi nous avons créé CheckIA</title>
-      <link>https://www.checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/</link>
-      <guid>https://www.checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/</guid>
-      <pubDate>Thu, 13 Aug 2026 09:00:00 +0200</pubDate>
-      <category>Vie de l'entreprise</category>
-      <description>CheckIA est né d'un constat partagé par des commissaires aux comptes et des experts en intelligence artificielle : la formalisation mérite mieux que du temps perdu.</description>
-    </item>
+    -->
   </channel>
 </rss>
