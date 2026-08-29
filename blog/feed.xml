@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog CheckIA</title>
-    <link>https://www.checkia.fr/blog/</link>
+    <link>https://checkia.fr/blog/</link>
     <description>Analyses, nouveautés produit et témoignages en vidéo sur la transformation du commissariat aux comptes et l'automatisation documentaire des missions CAC.</description>
     <language>fr-FR</language>
     <lastBuildDate>Sat, 29 Aug 2026 09:00:00 +0200</lastBuildDate>
-    <atom:link href="https://www.checkia.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://checkia.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
 
     <!-- Aucun article publié pour le moment. Modèle d'item :
     <item>
       <title>[Titre de l'article]</title>
-      <link>https://www.checkia.fr/blog/[serie]/[slug]/</link>
-      <guid>https://www.checkia.fr/blog/[serie]/[slug]/</guid>
+      <link>https://checkia.fr/blog/[serie]/[slug]/</link>
+      <guid>https://checkia.fr/blog/[serie]/[slug]/</guid>
       <pubDate>[Jour, JJ Mois AAAA 09:00:00 +0200]</pubDate>
       <category>[Série]</category>
       <description>[Description de 1 à 2 phrases.]</description>

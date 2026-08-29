@@ -8,13 +8,13 @@ Contact : contact@checkia.fr — Démonstration : https://calendar.notion.so/mee
 
 ## Pages principales
 
-- [Accueil](https://www.checkia.fr/) : présentation de la plateforme, problème adressé, fonctionnalités.
-- [Blog](https://www.checkia.fr/blog/) : analyses, nouveautés produit et témoignages en vidéo.
-- [Flux RSS du blog](https://www.checkia.fr/blog/feed.xml)
+- [Accueil](https://checkia.fr/) : présentation de la plateforme, problème adressé, fonctionnalités.
+- [Blog](https://checkia.fr/blog/) : analyses, nouveautés produit et témoignages en vidéo.
+- [Flux RSS du blog](https://checkia.fr/blog/feed.xml)
 
 ## Séries du blog
 
-- [Nouveautés produit](https://www.checkia.fr/blog/nouveautes-produit/) : chaque évolution de la plateforme, expliquée et démontrée en vidéo.
-- [Le futur de l'audit](https://www.checkia.fr/blog/futur-de-l-audit/) : analyses sur la transformation du commissariat aux comptes (IA, réglementation, organisation des cabinets).
-- [Vie de l'entreprise](https://www.checkia.fr/blog/vie-de-l-entreprise/) : les coulisses de CheckIA.
-- [Témoignages clients](https://www.checkia.fr/blog/temoignages-clients/) : des cabinets racontent, en vidéo, la transformation de leur production documentaire.
+- [Nouveautés produit](https://checkia.fr/blog/nouveautes-produit/) : chaque évolution de la plateforme, expliquée et démontrée en vidéo.
+- [Le futur de l'audit](https://checkia.fr/blog/futur-de-l-audit/) : analyses sur la transformation du commissariat aux comptes (IA, réglementation, organisation des cabinets).
+- [Vie de l'entreprise](https://checkia.fr/blog/vie-de-l-entreprise/) : les coulisses de CheckIA.
+- [Témoignages clients](https://checkia.fr/blog/temoignages-clients/) : des cabinets racontent, en vidéo, la transformation de leur production documentaire.

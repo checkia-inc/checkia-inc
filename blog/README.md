@@ -40,4 +40,4 @@ Blog statique, quatre séries :
 - La FAQ visible et le bloc `FAQPage` du JSON-LD doivent être identiques mot pour mot.
 - Transcription toujours dans le HTML (SEO vidéo + accessibilité + citation par les IA).
 - Dates au format ISO 8601 dans `datetime`, OG et JSON-LD.
-- URLs canoniques avec slash final, en `https://www.checkia.fr/…`.
+- URLs canoniques avec slash final, en `https://checkia.fr/…`.
