@@ -1,0 +1,26 @@
+# CheckIA
+
+> CheckIA est une plateforme française de structuration et d'automatisation documentaire des missions de commissariat aux comptes (CAC). Conçue par des commissaires aux comptes et des experts en intelligence artificielle, elle réduit le temps de formalisation des missions tout en renforçant la cohérence et la traçabilité des dossiers, dans un cadre conforme aux exigences professionnelles (NEP). Le commissaire aux comptes conserve la validation finale et la responsabilité de la mission. Données cloisonnées par cabinet, hébergement en infrastructure souveraine.
+
+Fonctionnalités principales : structuration des données mission, génération documentaire standardisée (plans de mission, lettres, notes), centralisation sécurisée des éléments probants, suivi et traçabilité des validations et signatures.
+
+Contact : contact@checkia.fr — Démonstration : https://calendar.notion.so/meet/jdcollard/checkia
+
+## Pages principales
+
+- [Accueil](https://www.checkia.fr/) : présentation de la plateforme, problème adressé, fonctionnalités.
+- [Blog](https://www.checkia.fr/blog/) : analyses, nouveautés produit et témoignages en vidéo.
+- [Flux RSS du blog](https://www.checkia.fr/blog/feed.xml)
+
+## Séries du blog
+
+- [Nouveautés produit](https://www.checkia.fr/blog/nouveautes-produit/) : chaque évolution de la plateforme, expliquée et démontrée en vidéo.
+- [Le futur de l'audit](https://www.checkia.fr/blog/futur-de-l-audit/) : analyses sur la transformation du commissariat aux comptes (IA, réglementation, organisation des cabinets).
+- [Vie de l'entreprise](https://www.checkia.fr/blog/vie-de-l-entreprise/) : les coulisses de CheckIA.
+- [Témoignages clients](https://www.checkia.fr/blog/temoignages-clients/) : des cabinets racontent, en vidéo, la transformation de leur production documentaire.
+
+## Articles
+
+- [L'IA va-t-elle transformer le commissariat aux comptes ?](https://www.checkia.fr/blog/futur-de-l-audit/ia-commissariat-aux-comptes/) : ce que l'IA automatise vraiment dans une mission CAC, et ce qui reste du ressort du professionnel.
+- [Génération documentaire standardisée](https://www.checkia.fr/blog/nouveautes-produit/generation-documentaire-standardisee/) : comment CheckIA produit plans de mission, lettres et notes.
+- [Pourquoi nous avons créé CheckIA](https://www.checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/) : l'origine de l'entreprise.

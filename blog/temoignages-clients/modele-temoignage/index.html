@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ================== MODÈLE — TÉMOIGNAGE CLIENT VIDÉO ===================
+       Pour publier un témoignage réel :
+       1. Dupliquer ce dossier vers /blog/temoignages-clients/<slug-cabinet>/
+       2. Remplacer TOUS les [CROCHETS] (texte, métadonnées, JSON-LD).
+       3. Passer la balise robots ci-dessous en :
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+       4. Ajouter la carte sur /blog/ et /blog/temoignages-clients/,
+          puis l'URL dans sitemap.xml et feed.xml.
+       Ce fichier reste en noindex tant qu'il contient des crochets.
+       ======================================================================= -->
+  <title>[Cabinet] : [résultat obtenu avec CheckIA] | Témoignage</title>
+  <meta name="description" content="[Nom, fonction] raconte comment le cabinet [Cabinet] a transformé la formalisation de ses missions avec CheckIA : [résultat 1], [résultat 2].">
+
+  <link rel="canonical" href="https://www.checkia.fr/blog/temoignages-clients/modele-temoignage/">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CheckIA">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://www.checkia.fr/blog/temoignages-clients/modele-temoignage/">
+  <meta property="og:title" content="[Cabinet] : [résultat obtenu avec CheckIA]">
+  <meta property="og:description" content="[Nom, fonction] raconte comment le cabinet [Cabinet] a transformé la formalisation de ses missions.">
+  <meta property="og:image" content="https://www.checkia.fr/images/og-image.jpg">
+  <meta property="article:published_time" content="[AAAA-MM-JJ]T09:00:00+02:00">
+  <meta property="article:section" content="Témoignages clients">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[Cabinet] : [résultat obtenu avec CheckIA]">
+  <meta name="twitter:description" content="[Nom, fonction] raconte la transformation de la formalisation de ses missions.">
+  <meta name="twitter:image" content="https://www.checkia.fr/images/og-image.jpg">
+
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/webclip.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/blog.css">
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      window.addEventListener("load", function () {
+        if (!window.__checkiaReady) root.classList.remove("js");
+      });
+    })();
+  </script>
+
+  <!-- JSON-LD : BlogPosting + VideoObject + BreadcrumbList.
+       Un témoignage peut aussi porter un bloc Review — à n'ajouter que si le
+       client a validé la citation et la note. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.checkia.fr/#organization",
+        "name": "CheckIA",
+        "url": "https://www.checkia.fr/",
+        "logo": "https://www.checkia.fr/images/logo_coor.png",
+        "email": "contact@checkia.fr",
+        "areaServed": "FR"
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://www.checkia.fr/blog/temoignages-clients/modele-temoignage/#article",
+        "mainEntityOfPage": "https://www.checkia.fr/blog/temoignages-clients/modele-temoignage/",
+        "headline": "[Cabinet] : [résultat obtenu avec CheckIA]",
+        "description": "[Nom, fonction] raconte comment le cabinet [Cabinet] a transformé la formalisation de ses missions avec CheckIA.",
+        "image": "https://www.checkia.fr/images/og-image.jpg",
+        "datePublished": "[AAAA-MM-JJ]T09:00:00+02:00",
+        "dateModified": "[AAAA-MM-JJ]T09:00:00+02:00",
+        "author": { "@id": "https://www.checkia.fr/#organization" },
+        "publisher": { "@id": "https://www.checkia.fr/#organization" },
+        "isPartOf": { "@id": "https://www.checkia.fr/blog/#blog" },
+        "articleSection": "Témoignages clients",
+        "inLanguage": "fr-FR",
+        "video": { "@id": "https://www.checkia.fr/blog/temoignages-clients/modele-temoignage/#video" }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://www.checkia.fr/blog/temoignages-clients/modele-temoignage/#video",
+        "name": "Témoignage — [Nom], [fonction], [Cabinet]",
+        "description": "[Résumé du témoignage en une ou deux phrases.]",
+        "thumbnailUrl": "https://www.checkia.fr/images/og-image.jpg",
+        "uploadDate": "[AAAA-MM-JJ]T09:00:00+02:00",
+        "duration": "PT[M]M[S]S",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/[ID_YOUTUBE]",
+        "inLanguage": "fr-FR",
+        "publisher": { "@id": "https://www.checkia.fr/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.checkia.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.checkia.fr/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Témoignages clients", "item": "https://www.checkia.fr/blog/temoignages-clients/" },
+          { "@type": "ListItem", "position": 4, "name": "[Cabinet]", "item": "https://www.checkia.fr/blog/temoignages-clients/modele-temoignage/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="progress" aria-hidden="true"><div class="progress__bar"></div></div>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="/" aria-label="CheckIA — accueil">
+        <img class="nav__logo" src="/images/logo_coor.png" alt="CheckIA" width="1622" height="300">
+      </a>
+      <div class="nav__actions">
+        <nav class="nav__links">
+          <a href="/blog/">Blog</a>
+          <a href="mailto:contact@checkia.fr?subject=contact%40checkia.fr">Contact</a>
+        </nav>
+        <a class="btn btn--sm" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
+          Réserver une démonstration
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="article-hero hero">
+        <div class="hero__aura" aria-hidden="true"></div>
+        <div class="hero__grid" aria-hidden="true"></div>
+
+        <div class="wrap">
+          <div class="article-hero__head">
+            <nav aria-label="Fil d'Ariane">
+              <ol class="crumbs reveal">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/temoignages-clients/">Témoignages clients</a></li>
+              </ol>
+            </nav>
+
+            <p class="eyebrow reveal" style="--delay:40ms"><span class="eyebrow__dot" aria-hidden="true"></span>Témoignage client</p>
+
+            <h1 class="h1 reveal" style="--delay:80ms">[Cabinet]&nbsp;: [résultat concret obtenu avec CheckIA]</h1>
+
+            <p class="lead reveal" style="--delay:130ms">[Nom], [fonction] chez [Cabinet], raconte comment son équipe a transformé la formalisation de ses missions.</p>
+
+            <p class="byline reveal" style="--delay:180ms">
+              <strong>[Nom], [fonction] — [Cabinet]</strong>
+              <span class="byline__sep" aria-hidden="true">·</span>
+              <time datetime="[AAAA-MM-JJ]">[date en toutes lettres]</time>
+              <span class="byline__sep" aria-hidden="true">·</span>
+              <span>Vidéo [MM]&nbsp;min</span>
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <div class="wrap">
+          <!-- La vidéo du témoignage est le média principal. -->
+          <div class="article-media reveal">
+            <figure>
+              <div class="videoshell" data-video-id="[ID_YOUTUBE]" data-video-title="Témoignage [Cabinet]">
+                <img src="/images/og-image.jpg" width="1200" height="630" alt="[Nom], [fonction] chez [Cabinet], face caméra." fetchpriority="high" decoding="async">
+                <button class="videoshell__play" type="button" aria-label="Lire le témoignage vidéo de [Nom], [Cabinet]">
+                  <span class="videoshell__btn" aria-hidden="true"></span>
+                </button>
+                <span class="videoshell__duration" aria-hidden="true">[MM:SS]</span>
+                <noscript>
+                  <p style="padding:1rem;color:#fff;">
+                    <a href="https://www.youtube.com/watch?v=[ID_YOUTUBE]" style="color:#55e2fa;">Voir la vidéo sur YouTube</a>
+                  </p>
+                </noscript>
+              </div>
+              <figcaption>[Nom], [fonction] — [Cabinet], [ville].</figcaption>
+            </figure>
+
+            <details class="transcript">
+              <summary>Transcription complète du témoignage</summary>
+              <div>
+                <p>[Coller ici la transcription complète, horodatée par passages : <strong>[00:00]</strong> — …]</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="article-col">
+            <aside class="tldr reveal" aria-label="L'essentiel du témoignage">
+              <p class="tldr__label">Le cabinet en bref</p>
+              <ul>
+                <li><strong>Cabinet</strong>&nbsp;: [Cabinet], [ville] — [effectif] collaborateurs, [nombre] mandats CAC.</li>
+                <li><strong>Contexte</strong>&nbsp;: [problème initial en une phrase].</li>
+                <li><strong>Résultat</strong>&nbsp;: [gain mesuré : temps de formalisation, homogénéité, délais…].</li>
+              </ul>
+            </aside>
+
+            <div class="prose">
+              <blockquote>
+                <p>«&nbsp;[Citation la plus forte du témoignage — une phrase, concrète et mesurable si possible.]&nbsp;»</p>
+                <footer>— [Nom], [fonction], [Cabinet]</footer>
+              </blockquote>
+
+              <h2>Le contexte</h2>
+              <p>[Deux ou trois phrases : taille du cabinet, types de mandats, organisation de la formalisation avant CheckIA, point de douleur principal.]</p>
+
+              <h2>La mise en place</h2>
+              <p>[Comment s'est passé le démarrage : premières missions traitées, adaptation des trames aux standards du cabinet, prise en main par les équipes.]</p>
+
+              <h2>Les résultats</h2>
+              <ul>
+                <li><strong>[Résultat 1]</strong>&nbsp;: [détail chiffré ou concret].</li>
+                <li><strong>[Résultat 2]</strong>&nbsp;: [détail].</li>
+                <li><strong>[Résultat 3]</strong>&nbsp;: [détail].</li>
+              </ul>
+
+              <blockquote>
+                <p>«&nbsp;[Seconde citation — sur la suite, la recommandation ou le changement de quotidien.]&nbsp;»</p>
+                <footer>— [Nom], [fonction], [Cabinet]</footer>
+              </blockquote>
+
+              <p>Votre cabinet fait face aux mêmes enjeux&nbsp;? <a href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">Réservez une démonstration</a> pour voir CheckIA sur vos propres trames.</p>
+            </div>
+
+            <div class="share">
+              <span class="share__label">Partager</span>
+              <a class="chip" href="https://www.linkedin.com/sharing/share-offsite/?url=[URL_ENCODEE]" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="chip" href="https://twitter.com/intent/tweet?url=[URL_ENCODEE]" target="_blank" rel="noopener">X</a>
+              <button class="chip" type="button" data-copy-link>Copier le lien</button>
+            </div>
+
+            <aside class="authorcard">
+              <span class="authorcard__avatar"><span class="i" style="--src:url(/images/circle-check-regular-full.svg)" aria-hidden="true"></span></span>
+              <div>
+                <p class="authorcard__name">L'équipe CheckIA</p>
+                <p class="authorcard__bio">CheckIA est conçu en France par des commissaires aux comptes et des experts en intelligence artificielle. La plateforme structure et automatise la production documentaire des missions CAC.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="cta">
+      <div class="cta__aura" aria-hidden="true"></div>
+      <div class="wrap cta__inner" style="padding-bottom: clamp(3.5rem, 6.5vw, 5.5rem);">
+        <div class="cta__head">
+          <h2 class="h2 reveal">Découvrez CheckIA en situation réelle</h2>
+          <p class="body reveal" style="--delay:70ms">Présentation structurée de la solution et de son intégration dans l'organisation de votre cabinet.</p>
+        </div>
+
+        <div class="reveal" style="--delay:140ms">
+          <a class="btn" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
+            Réserver une démonstration
+            <svg class="btn__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <a href="/" aria-label="CheckIA — accueil">
+          <img class="footer__logo" src="/images/logo_coor.png" alt="CheckIA" width="1622" height="300" loading="lazy">
+        </a>
+        <nav class="footer__links">
+          <a href="/blog/">Blog</a>
+          <a href="mailto:contact@checkia.fr?subject=contact%40checkia.fr">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__bottom small">CheckIA Inc © 2026</div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/blog.js" defer></script>
+</body>
+</html>
