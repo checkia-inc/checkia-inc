@@ -257,12 +257,16 @@ em { font-style: normal; color: var(--blue); }
 .btn--ghost {
   --btn-bg: var(--white);
   --btn-fg: var(--ink);
-  border: 1px solid var(--line);
+  border: 1px solid var(--grey-3);
   box-shadow: var(--shadow-sm);
 }
 
-/* La face doit couvrir la bordure comprise, sinon un liseré du halo apparaît. */
-.btn--ghost::before { inset: -1px; }
+/* La face doit couvrir la bordure comprise, sinon un liseré du halo apparaît.
+   Le contour visible est donc porté par la face elle-même. */
+.btn--ghost::before {
+  inset: -1px;
+  border: 1px solid var(--grey-3);
+}
 
 .btn__arrow { width: 1em; height: 1em; transition: transform 0.3s var(--ease); }
 .btn:hover .btn__arrow { transform: translateX(3px); }

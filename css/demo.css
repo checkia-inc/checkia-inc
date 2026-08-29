@@ -68,15 +68,6 @@
   margin-top: 0.35rem;
 }
 
-.btn--ghost {
-  --btn-bg: var(--white);
-  --btn-fg: var(--ink);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn--ghost:hover::after { opacity: 0; }
-
 /* --- Lecteur vidéo (point focal de la page) ------------------------------ */
 .player-section {
   position: relative;
