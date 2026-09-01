@@ -467,8 +467,7 @@
   line-height: 1.72;
   letter-spacing: -0.008em;
   color: var(--ink-2);
-  text-align: justify;
-  hyphens: auto;
+  text-align: left;
   text-wrap: pretty;
 }
 
