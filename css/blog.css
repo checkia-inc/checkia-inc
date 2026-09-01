@@ -467,6 +467,7 @@
   line-height: 1.72;
   letter-spacing: -0.008em;
   color: var(--ink-2);
+  text-align: left;
   text-wrap: pretty;
 }
 
@@ -764,4 +765,17 @@
   background: var(--paper);
   color: var(--grey-2);
   font-size: 0.9375rem;
+}
+
+/* Masquage visuel accessible (titres de structure pour lecteurs d'écran et SEO). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }

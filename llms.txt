@@ -21,4 +21,4 @@ Contact : contact@checkia.fr — Démonstration : https://calendar.notion.so/mee
 
 ## Articles du blog
 
-- [Pourquoi nous avons créé CheckIA, un logiciel CAC dopé à l'intelligence artificielle](https://checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/) : le constat fondateur (la formalisation absorbe plus de la moitié du temps des missions), le parti pris — l'IA automatise la forme, jamais le jugement — et la première version commercialisée en démonstration vidéo.
+- [Pourquoi nous avons créé CheckIA pour les missions spécifiques du CAC](https://checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/) : le constat fondateur (trop de temps consacré à formaliser dans les missions spécifiques), le parti pris — CheckIA automatise la préparation documentaire, jamais le jugement professionnel — et la démonstration en vidéo.
