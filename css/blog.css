@@ -294,7 +294,7 @@
   margin-top: 0.6rem;
   font-size: 0.8125rem;
   color: var(--grey-3);
-  text-align: center;
+  text-align: left;
 }
 
 /* --- Façade vidéo (l'iframe n'est chargée qu'au clic) --------------------- */

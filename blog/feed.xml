@@ -5,18 +5,16 @@
     <link>https://checkia.fr/blog/</link>
     <description>Analyses, nouveautés produit et témoignages en vidéo sur la transformation du commissariat aux comptes et l'automatisation documentaire des missions CAC.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Sat, 29 Aug 2026 09:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 09:00:00 +0200</lastBuildDate>
     <atom:link href="https://checkia.fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
 
-    <!-- Aucun article publié pour le moment. Modèle d'item :
     <item>
-      <title>[Titre de l'article]</title>
-      <link>https://checkia.fr/blog/[serie]/[slug]/</link>
-      <guid>https://checkia.fr/blog/[serie]/[slug]/</guid>
-      <pubDate>[Jour, JJ Mois AAAA 09:00:00 +0200]</pubDate>
-      <category>[Série]</category>
-      <description>[Description de 1 à 2 phrases.]</description>
+      <title>Pourquoi nous avons créé CheckIA, un logiciel CAC dopé à l'intelligence artificielle</title>
+      <link>https://checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/</link>
+      <guid>https://checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/</guid>
+      <pubDate>Sat, 29 Aug 2026 09:00:00 +0200</pubDate>
+      <category>Vie de l'entreprise</category>
+      <description>Un logiciel CAC conçu par des commissaires aux comptes : l'IA automatise la documentation d'audit, le professionnel garde le jugement. Démonstration en vidéo.</description>
     </item>
-    -->
   </channel>
 </rss>

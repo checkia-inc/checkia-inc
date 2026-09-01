@@ -18,3 +18,7 @@ Contact : contact@checkia.fr — Démonstration : https://calendar.notion.so/mee
 - [Le futur de l'audit](https://checkia.fr/blog/futur-de-l-audit/) : analyses sur la transformation du commissariat aux comptes (IA, réglementation, organisation des cabinets).
 - [Vie de l'entreprise](https://checkia.fr/blog/vie-de-l-entreprise/) : les coulisses de CheckIA.
 - [Témoignages clients](https://checkia.fr/blog/temoignages-clients/) : des cabinets racontent, en vidéo, la transformation de leur production documentaire.
+
+## Articles du blog
+
+- [Pourquoi nous avons créé CheckIA, un logiciel CAC dopé à l'intelligence artificielle](https://checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/) : le constat fondateur (la formalisation absorbe plus de la moitié du temps des missions), le parti pris — l'IA automatise la forme, jamais le jugement — et la première version commercialisée en démonstration vidéo.
