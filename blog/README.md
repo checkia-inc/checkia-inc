@@ -11,17 +11,29 @@ Static blog, four series:
 
 Keyword targets and editorial rules: see [STRATEGIE-SEO.md](STRATEGIE-SEO.md).
 
+## Templates (3)
+
+**The post type is never assumed. Before creating any article, ALWAYS ask the
+author which type of post this is — they must specify one of the three:**
+
+| `--format` | Post type | Template (noindex gabarit) |
+|---|---|---|
+| `video` | video + full text article | `futur-de-l-audit/ia-commissariat-aux-comptes/index.html` |
+| `texte` | written article only, no video | `vie-de-l-entreprise/modele-texte/index.html` |
+| `temoignage` | client testimonial (video) | `temoignages-clients/modele-temoignage/index.html` |
+
+The generator refuses to run without `--format`.
+
 ## Publishing an article
 
-1. **Generate** the article skeleton (created as `noindex`, with placeholders):
+1. **Ask the author for the post type** (video / texte / temoignage — see
+   table above), then **generate** the article skeleton (created as `noindex`,
+   with placeholders):
 
    ```bash
-   python3 tools/new-article.py <serie> <slug-de-l-article> "Titre de l'article"
+   python3 tools/new-article.py <serie> <slug-de-l-article> "Titre de l'article" --format <video|texte|temoignage>
    ```
 
-   Add `--format temoignage` for a client testimonial (template:
-   `temoignages-clients/modele-temoignage/`). The full video + text reference
-   template is `futur-de-l-audit/ia-commissariat-aux-comptes/index.html`.
    Slug should be short, lowercase, hyphenated, without accents.
 2. **Adapt the `<head>`**: `<title>` (50–60 characters), `description`
    (140–160), `canonical`, OG/Twitter tags, ISO dates, JSON-LD

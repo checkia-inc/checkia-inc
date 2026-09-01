@@ -2,12 +2,14 @@
 """Génère un nouvel article du blog à partir du gabarit de référence.
 
 Usage :
-  python3 tools/new-article.py <serie> <slug> "Titre de l'article" [--format video|temoignage]
+  python3 tools/new-article.py <serie> <slug> "Titre de l'article" --format video|texte|temoignage
 
   <serie>  : nouveautes-produit | futur-de-l-audit | vie-de-l-entreprise | temoignages-clients
   <slug>   : court, minuscules, tirets, sans accents (ex. cloture-des-comptes-ia)
-  --format : video (défaut) = gabarit complet vidéo + texte ;
-             temoignage = gabarit témoignage client.
+  --format : OBLIGATOIRE — toujours demander à l'auteur le type d'article :
+             video      = article complet vidéo + texte ;
+             texte      = article écrit seul, sans vidéo ;
+             temoignage = témoignage client (vidéo).
 
 L'article est créé en `noindex` avec les placeholders du gabarit. Suivre la
 checklist affichée, puis `python3 tools/check-seo.py` avant publication.
@@ -30,6 +32,7 @@ SERIES = {
 
 TEMPLATES = {
     "video": ("futur-de-l-audit", "ia-commissariat-aux-comptes"),
+    "texte": ("vie-de-l-entreprise", "modele-texte"),
     "temoignage": ("temoignages-clients", "modele-temoignage"),
 }
 
@@ -38,11 +41,25 @@ MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
 
 
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    fmt = "temoignage" if "--format=temoignage" in sys.argv or "temoignage" in [
-        a.split("=")[-1] for a in sys.argv if a.startswith("--format")] else "video"
+    argv = sys.argv[1:]
+    args, fmt = [], None
+    i = 0
+    while i < len(argv):
+        a = argv[i]
+        if a.startswith("--format"):
+            if "=" in a:
+                fmt = a.split("=", 1)[1]
+            else:
+                i += 1
+                fmt = argv[i] if i < len(argv) else None
+        else:
+            args.append(a)
+        i += 1
     if len(args) < 3:
         sys.exit(__doc__)
+    if fmt not in TEMPLATES:
+        sys.exit("--format est obligatoire : video, texte ou temoignage.\n"
+                 "Toujours demander à l'auteur quel type d'article il veut publier.")
     serie, slug, title = args[0], args[1], args[2]
 
     if serie not in SERIES:
@@ -83,7 +100,8 @@ def main():
     print(f"Titre à intégrer : « {title} »\n")
     print("Checklist avant publication :")
     print("  1. Remplacer titres, description, contenus, FAQ, TLDR (« L'essentiel »).")
-    print("  2. Vidéo : ID YouTube, durée, chapitres/Clip, miniature, transcription.")
+    if fmt != "texte":
+        print("  2. Vidéo : ID YouTube, durée, chapitres/Clip, miniature, transcription.")
     print("  3. Image OG dédiée 1200×630 dans images/blog/.")
     print("  4. Repasser robots en « index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1 ».")
     print("  5. Cartes : /blog/, page de série (+ ItemList JSON-LD), pagenav/« À lire ensuite » des voisins.")
