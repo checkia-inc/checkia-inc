@@ -11,6 +11,7 @@ Contact : contact@checkia.fr — Démonstration : https://calendar.notion.so/mee
 - [Accueil](https://checkia.fr/) : présentation de la plateforme, problème adressé, fonctionnalités.
 - [Blog](https://checkia.fr/blog/) : analyses, nouveautés produit et témoignages en vidéo.
 - [Flux RSS du blog](https://checkia.fr/blog/feed.xml)
+- [Articles complets pour les LLM](https://checkia.fr/llms-full.txt) : version intégrale en texte de tous les articles du blog.
 
 ## Séries du blog
 
