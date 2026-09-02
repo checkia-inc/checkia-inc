@@ -22,4 +22,4 @@ Contact : contact@checkia.fr — Démonstration : https://calendar.notion.so/mee
 
 ## Articles du blog
 
-- [Pourquoi nous avons créé CheckIA pour les missions spécifiques du CAC](https://checkia.fr/blog/vie-de-l-entreprise/pourquoi-nous-avons-cree-checkia/) : le constat fondateur (trop de temps consacré à formaliser dans les missions spécifiques), le parti pris — CheckIA automatise la préparation documentaire, jamais le jugement professionnel — et la démonstration en vidéo.
+- [Pourquoi nous avons créé CheckIA pour les missions spécifiques du CAC](https://checkia.fr/blog/vie-de-l-entreprise/ia-missions-specifiques-cac/) : le constat fondateur (trop de temps consacré à formaliser dans les missions spécifiques), le parti pris — CheckIA automatise la préparation documentaire, jamais le jugement professionnel — et la démonstration en vidéo.

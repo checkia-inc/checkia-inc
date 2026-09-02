@@ -1,9 +1,3 @@
-# CheckIA — articles complets du blog
-
-> Version intégrale des articles de https://checkia.fr/blog/ pour les assistants et moteurs d'IA. Index court : https://checkia.fr/llms.txt
-
----
-
 # Et si l'IA transformait les missions spécifiques du CAC ? Découvrez CheckIA
 
 Source : https://checkia.fr/blog/vie-de-l-entreprise/ia-missions-specifiques-cac/ — Série : Vie de l'entreprise — Publié : 2026-08-29
