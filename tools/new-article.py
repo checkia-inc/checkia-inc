@@ -11,7 +11,8 @@ Usage :
              texte      = article écrit seul, sans vidéo ;
              temoignage = témoignage client (vidéo).
 
-L'article est créé en `noindex` avec les placeholders du gabarit. Suivre la
+L'article est créé en `noindex` avec les placeholders du gabarit et un bloc
+`checkia-meta` (format / query / author / og-image) à compléter. Suivre la
 checklist affichée, puis `python3 tools/check-seo.py` avant publication.
 """
 
@@ -93,21 +94,40 @@ def main():
     text = re.sub(r'<meta name="robots" content="[^"]*">',
                   '<meta name="robots" content="noindex, nofollow">', text)
 
+    # Per-article meta block (read by tools/check-seo.py on indexed posts)
+    block = (
+        "  <!-- checkia-meta\n"
+        f"       format: {fmt}\n"
+        "       query: none\n"
+        "       author: L'équipe CheckIA\n"
+        "       og-image: pending\n"
+        "  -->\n"
+    )
+    if "checkia-meta" in text:
+        text = re.sub(r"[ \t]*<!--\s*checkia-meta.*?-->\n?", block, text, count=1, flags=re.S)
+    else:
+        text = text.replace("<head>\n", "<head>\n" + block, 1)
+
     dest.mkdir(parents=True)
     (dest / "index.html").write_text(text, encoding="utf-8")
 
     print(f"Créé : blog/{serie}/{slug}/index.html (noindex)\n")
     print(f"Titre à intégrer : « {title} »\n")
-    print("Checklist avant publication :")
-    print("  1. Remplacer titres, description, contenus, FAQ, TLDR (« L'essentiel »).")
+    print("Checklist avant publication (voir AGENTS.md) :")
+    print("  1. Lire les 3 derniers articles indexés (ton et style) : grep -L noindex blog/*/*/index.html")
+    print("  2. Remplacer titres, description, contenus, FAQ, TLDR (« L'essentiel »).")
+    print("  3. Bloc checkia-meta : query (requête cible ou none), author (personne ou L'équipe CheckIA).")
     if fmt != "texte":
-        print("  2. Vidéo : ID YouTube, durée, chapitres/Clip, miniature, transcription.")
-    print("  3. Image OG dédiée 1200×630 dans images/blog/.")
-    print("  4. Repasser robots en « index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1 ».")
-    print("  5. Cartes : /blog/, page de série (+ ItemList JSON-LD), pagenav/« À lire ensuite » des voisins.")
-    print("  6. sitemap.xml (lastmod), blog/feed.xml, llms.txt.")
+        print("  4. Vidéo : ID YouTube, durée, chapitres/Clip, miniature, transcription.")
+    print("  5. Images : demander la source (fichier fourni / miniature vidéo / carte générée) puis")
+    print(f"     python3 tools/social-images.py {serie} {slug} --source <generated|image:…|video:…>")
+    print("     → reporter og:image / og:image:alt / twitter:image / JSON-LD image, og-image: dedicated.")
+    print("  6. Cartes : /blog/, page de série (+ ItemList JSON-LD), pagenav/« À lire ensuite » des voisins.")
     print("  7. python3 tools/build-llms.py   (index.md + llms-full.txt)")
-    print("  8. python3 tools/check-seo.py    (doit sortir sans erreur)")
+    print("  8. python3 tools/check-seo.py    (0 erreur, encore en noindex)")
+    print("  9. Demander « Prêt à publier ? ». Si oui : robots en index, sitemap.xml (lastmod),")
+    print("     blog/feed.xml, llms.txt, build-llms + check-seo à nouveau, commit (message en français).")
+    print(f" 10. Après déploiement : tools/indexnow.sh {SITE}/blog/{serie}/{slug}/")
 
 
 if __name__ == "__main__":
