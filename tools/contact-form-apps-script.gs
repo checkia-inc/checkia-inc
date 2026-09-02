@@ -9,9 +9,13 @@
  *    - Accès : Tout le monde
  * 4. Copier l'URL « /exec » et la coller dans SCRIPT_URL
  *    du fichier contact/index.html.
+ *
+ * Note : contact@checkia.fr est un groupe Google. Gmail supprime la copie
+ * destinée à l'expéditeur lui-même ; le BCC direct contourne cela.
  */
 
 var DESTINATAIRE = "contact@checkia.fr";
+var COPIE_DIRECTE = "chloe@checkia.fr"; // adresse du compte qui a déployé le script
 
 function doPost(e) {
   try {
@@ -39,6 +43,7 @@ function doPost(e) {
 
     MailApp.sendEmail({
       to: DESTINATAIRE,
+      bcc: COPIE_DIRECTE,
       replyTo: email,
       subject: sujet,
       body: corps
