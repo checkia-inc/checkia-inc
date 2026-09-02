@@ -295,6 +295,22 @@ em { font-style: normal; color: var(--blue); }
 
 .nav__logo { height: 26px; width: auto; }
 
+/* Le logo ne doit jamais être compressé par le CTA sur petits écrans. */
+.nav__inner > a:first-child { flex-shrink: 0; }
+
+@media (max-width: 30rem) {
+  .nav__actions { gap: 0.75rem; }
+  .nav__actions .btn--sm { padding: 0.5rem 0.8rem; font-size: 0.8125rem; }
+}
+
+/* Libellé court du CTA sur très petits écrans, pour ne jamais déborder. */
+.nav-cta__short { display: none; }
+
+@media (max-width: 22.5rem) {
+  .nav-cta__long { display: none; }
+  .nav-cta__short { display: inline; }
+}
+
 .nav__actions { display: flex; align-items: center; gap: 1.5rem; }
 
 .nav__links {
