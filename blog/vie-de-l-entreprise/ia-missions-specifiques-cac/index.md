@@ -1,6 +1,6 @@
 # Et si l'IA transformait les missions spécifiques du CAC ? Découvrez CheckIA
 
-Source : https://checkia.fr/blog/vie-de-l-entreprise/ia-missions-specifiques-cac/ — Série : Vie de l'entreprise — Publié : 2026-08-29
+Source : https://checkia.fr/blog/vie-de-l-entreprise/ia-missions-specifiques-cac/ — Série : Vie de l'entreprise — Publié : 2026-09-01
 
 CheckIA automatise la préparation documentaire des missions spécifiques du CAC, sans remplacer le jugement professionnel. Démonstration vidéo disponible.
 
