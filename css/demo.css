@@ -269,9 +269,9 @@
 .trust__item img { width: 1.05rem; height: 1.05rem; opacity: 0.7; }
 
 /* --- Appel à l'action final --------------------------------------------- */
+/* Même traitement que l'accueil : la fenêtre du produit s'appuie sur le bord
+   inférieur de la section (image à angles droits en pied). */
 .cta--demo { margin-bottom: clamp(3rem, 6vw, 5rem); }
-
-.cta--demo .cta__inner { padding-bottom: clamp(3.5rem, 7vw, 6rem); }
 
 .cta__note {
   font-size: 0.9375rem;
