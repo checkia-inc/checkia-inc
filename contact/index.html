@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact — CheckIA</title>
+  <meta name="description" content="Contactez l’équipe CheckIA : questions sur la plateforme, démonstration, partenariats. Nous répondons sous 24 h ouvrées.">
+
+  <link rel="canonical" href="https://checkia.fr/contact/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CheckIA">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://checkia.fr/contact/">
+  <meta property="og:title" content="Contact — CheckIA">
+  <meta property="og:description" content="Contactez l’équipe CheckIA : questions sur la plateforme, démonstration, partenariats.">
+  <meta property="og:image" content="https://checkia.fr/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — CheckIA">
+  <meta name="twitter:description" content="Contactez l’équipe CheckIA : questions sur la plateforme, démonstration, partenariats.">
+  <meta name="twitter:image" content="https://checkia.fr/images/og-image.jpg">
+
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/webclip.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      window.addEventListener("load", function () {
+        if (!window.__checkiaReady) root.classList.remove("js");
+      });
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://checkia.fr/contact/",
+    "name": "Contact — CheckIA",
+    "inLanguage": "fr-FR",
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://checkia.fr/#organization",
+      "name": "CheckIA",
+      "email": "contact@checkia.fr"
+    }
+  }
+  </script>
+
+  <style>
+    /* --- Page contact ---------------------------------------------------- */
+    .contact-hero {
+      position: relative;
+      padding: clamp(3.5rem, 7vw, 6rem) 0 var(--section-y);
+      overflow: hidden;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-aside .lead { margin-top: 1rem; }
+
+    .contact-aside__meta {
+      margin-top: 2.25rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--grey-1);
+    }
+
+    .contact-meta strong { color: var(--ink); font-weight: 600; }
+    .contact-meta a { color: var(--blue); text-decoration: none; }
+    .contact-meta a:hover { text-decoration: underline; }
+
+    .contact-meta__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex: none;
+      transform: translateY(-1px);
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-md);
+      padding: clamp(1.5rem, 3.5vw, 2.5rem);
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem 1.25rem;
+    }
+
+    @media (max-width: 560px) {
+      .contact-form { grid-template-columns: 1fr; }
+    }
+
+    .field { display: grid; gap: 0.45rem; }
+    .field--full { grid-column: 1 / -1; }
+
+    .field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
+
+    .field label .optional {
+      font-weight: 400;
+      color: var(--grey-3);
+      margin-left: 0.3rem;
+    }
+
+    .field label .required { color: var(--blue); }
+
+    .field input,
+    .field textarea {
+      font: inherit;
+      font-size: 0.97rem;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      padding: 0.75rem 0.9rem;
+      transition: border-color 0.18s var(--ease), background 0.18s var(--ease), box-shadow 0.18s var(--ease);
+      width: 100%;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder { color: var(--grey-3); }
+
+    .field input:hover,
+    .field textarea:hover { border-color: var(--grey-3); }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: var(--white);
+      box-shadow: 0 0 0 3px var(--blue-wash);
+    }
+
+    .field textarea { resize: vertical; min-height: 9.5rem; }
+
+    .contact-form__footer {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+    }
+
+    .contact-form__note { font-size: 0.85rem; color: var(--grey-2); max-width: 34ch; }
+
+    .contact-form .btn[disabled] { opacity: 0.6; pointer-events: none; }
+
+    .form-status {
+      grid-column: 1 / -1;
+      display: none;
+      border-radius: var(--r-sm);
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .form-status.is-visible { display: block; }
+
+    .form-status--success {
+      background: var(--cyan-wash);
+      border: 1px solid #bfeefb;
+      color: var(--ink-2);
+    }
+
+    .form-status--error {
+      background: #fdf0f0;
+      border: 1px solid #f2d4d4;
+      color: #8a2a2a;
+    }
+
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ================= Navigation ================= -->
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="/" aria-label="CheckIA — accueil">
+        <img class="nav__logo" src="/images/logo_coor.png" alt="CheckIA" width="1622" height="300">
+      </a>
+      <div class="nav__actions">
+        <nav class="nav__links">
+          <a href="/blog/">Blog</a>
+          <a href="/contact/" aria-current="page">Contact</a>
+        </nav>
+        <a class="btn btn--sm" href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">
+          Réserver une démonstration
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="hero__aura" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="wrap">
+        <div class="contact-grid">
+          <!-- Colonne gauche : contexte -->
+          <div class="contact-aside">
+            <p class="eyebrow reveal"><span class="eyebrow__dot" aria-hidden="true"></span>Contact</p>
+            <h1 class="h1 reveal" style="--delay:60ms">Parlons de votre cabinet</h1>
+            <p class="lead reveal" style="--delay:120ms">Une question sur la plateforme, une démonstration à organiser ou un projet de partenariat&nbsp;? Écrivez-nous, nous vous répondons sous 24&nbsp;heures ouvrées.</p>
+
+            <div class="contact-aside__meta reveal" style="--delay:180ms">
+              <p class="contact-meta">
+                <span class="contact-meta__dot" aria-hidden="true"></span>
+                <span><strong>E-mail&nbsp;:</strong> <a href="mailto:contact@checkia.fr">contact@checkia.fr</a></span>
+              </p>
+              <p class="contact-meta">
+                <span class="contact-meta__dot" aria-hidden="true"></span>
+                <span><strong>Démonstration&nbsp;:</strong> <a href="https://calendar.notion.so/meet/jdcollard/checkia" target="_blank" rel="noopener">réserver un créneau</a></span>
+              </p>
+              <p class="contact-meta">
+                <span class="contact-meta__dot" aria-hidden="true"></span>
+                <span>Conçu en France, données hébergées en infrastructure souveraine.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Colonne droite : formulaire -->
+          <div class="contact-card reveal" style="--delay:150ms">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="field">
+                <label for="cf-nom">Nom <span class="required" aria-hidden="true">*</span></label>
+                <input id="cf-nom" name="nom" type="text" required autocomplete="name" placeholder="Marie Dupont">
+              </div>
+
+              <div class="field">
+                <label for="cf-email">Adresse e-mail <span class="required" aria-hidden="true">*</span></label>
+                <input id="cf-email" name="email" type="email" required autocomplete="email" placeholder="marie.dupont@cabinet.fr">
+              </div>
+
+              <div class="field">
+                <label for="cf-cabinet">Cabinet / Société <span class="optional">(facultatif)</span></label>
+                <input id="cf-cabinet" name="cabinet" type="text" autocomplete="organization" placeholder="Nom de votre cabinet">
+              </div>
+
+              <div class="field">
+                <label for="cf-telephone">Téléphone <span class="optional">(facultatif)</span></label>
+                <input id="cf-telephone" name="telephone" type="tel" autocomplete="tel" placeholder="06 12 34 56 78">
+              </div>
+
+              <div class="field field--full">
+                <label for="cf-message">Votre message <span class="optional">(facultatif)</span></label>
+                <textarea id="cf-message" name="message" placeholder="Précisez votre demande : taille du cabinet, types de missions, calendrier…"></textarea>
+              </div>
+
+              <!-- Champ anti-spam invisible pour les visiteurs -->
+              <div class="hp-field" aria-hidden="true">
+                <label for="cf-site">Site web</label>
+                <input id="cf-site" name="site" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+              <div class="contact-form__footer">
+                <p class="contact-form__note">Vos informations ne sont utilisées que pour répondre à votre demande.</p>
+                <button class="btn" type="submit" id="cf-submit">
+                  Envoyer le message
+                  <svg class="btn__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0-4-4m4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Pied de page ================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <a href="/" aria-label="CheckIA — accueil">
+          <img class="footer__logo" src="/images/logo_coor.png" alt="CheckIA" width="1622" height="300" loading="lazy">
+        </a>
+        <nav class="footer__links">
+          <a href="/blog/">Blog</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+      <div class="footer__bottom small">CheckIA Inc © 2026</div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  <script>
+    (function () {
+      // URL du déploiement Google Apps Script (application web).
+      // Remplacer par l'URL « /exec » une fois le script déployé.
+      var SCRIPT_URL = "";
+
+      var form = document.getElementById("contact-form");
+      var status = document.getElementById("form-status");
+      var submit = document.getElementById("cf-submit");
+
+      function showStatus(kind, message) {
+        status.textContent = message;
+        status.className = "form-status is-visible form-status--" + kind;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        // Anti-spam : les robots remplissent le champ caché.
+        if (form.site.value) return;
+
+        if (!SCRIPT_URL) {
+          showStatus("error", "Le formulaire n’est pas encore activé. Écrivez-nous directement à contact@checkia.fr.");
+          return;
+        }
+
+        var data = new FormData(form);
+        data.delete("site");
+
+        submit.disabled = true;
+        submit.setAttribute("disabled", "");
+
+        fetch(SCRIPT_URL, { method: "POST", body: data })
+          .then(function (res) {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            form.reset();
+            showStatus("success", "Merci ! Votre message a bien été envoyé. Nous revenons vers vous sous 24 heures ouvrées.");
+          })
+          .catch(function () {
+            showStatus("error", "Une erreur est survenue lors de l’envoi. Réessayez, ou écrivez-nous à contact@checkia.fr.");
+          })
+          .finally(function () {
+            submit.disabled = false;
+            submit.removeAttribute("disabled");
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
