@@ -18,6 +18,39 @@
     window.addEventListener("scroll", syncNav, { passive: true });
   }
 
+  /* --- Menu mobile (hamburger) ------------------------------------------ */
+  var navActions = nav ? nav.querySelector(".nav__actions") : null;
+  var navLinks = nav ? nav.querySelector(".nav__links") : null;
+
+  if (navActions && navLinks) {
+    var burger = document.createElement("button");
+    burger.type = "button";
+    burger.className = "nav__burger";
+    burger.setAttribute("aria-label", "Ouvrir le menu");
+    burger.setAttribute("aria-expanded", "false");
+    burger.innerHTML = "<span></span><span></span><span></span>";
+    navActions.appendChild(burger);
+
+    var setMenu = function (open) {
+      nav.classList.toggle("nav--open", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    };
+
+    burger.addEventListener("click", function () {
+      setMenu(!nav.classList.contains("nav--open"));
+    });
+
+    // Ferme le menu après un clic sur un lien ou en repassant en grand écran.
+    navLinks.addEventListener("click", function () { setMenu(false); });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 992) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setMenu(false);
+    });
+  }
+
   /* --- Apparition progressive ------------------------------------------ */
   var revealables = document.querySelectorAll(".reveal");
 
