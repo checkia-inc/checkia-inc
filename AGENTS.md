@@ -96,7 +96,8 @@ Every post goes through two distinct checks. Don't conflate them:
    (`query: …` or `query: none`), never an oversight.
 2. **Baseline SEO and LLM optimization** (*every post, no exceptions*):
    head tags, JSON-LD, canonical, sitemap, feed, dedicated OG image, social
-   visuals, « L'essentiel », FAQ, transcript, markdown alternate, `llms.txt`.
+   visuals and social copy, « L'essentiel », FAQ, transcript, markdown
+   alternate, `llms.txt`.
 
 ## Target queries
 
@@ -228,7 +229,9 @@ creates it, you fill it in, the checker enforces it on indexed posts:
     python3 tools/check-seo.py
     ```
 
-11. **Go-live gate.** Show the author the checker output and ask
+11. **Social copy.** Write `social.md` next to the article (tweet,
+    Instagram caption, LinkedIn/Facebook snippet) — see « Social copy » below.
+12. **Go-live gate.** Show the author the checker output and ask
     « Prêt à publier ? ». Only after a yes, follow « Going live » below.
 
 ## Author procedure (E-E-A-T)
@@ -329,8 +332,44 @@ paste. The text on the cards is French. Profiles: LinkedIn
 `https://www.instagram.com/checkiafr`, Facebook
 `https://www.facebook.com/checkiafr`, X `https://x.com/checkiafr`.
 
-Do **not** generate caption files. If the author asks for a caption, write
-it in French and use the standard hashtags `#CNCC #CAC #Audit`.
+## Social copy (after the post is finished)
+
+Once the article is final and the checker passes, write
+`blog/<serie>/<slug>/social.md` with three ready-to-paste posts, in French,
+in the blog's voice. Each one teases the post and sends the reader to the
+article to read the rest. Never summarize the whole post: one insight, one
+figure or one question, then the link.
+
+```markdown
+# Réseaux sociaux — <titre de l'article>
+
+URL : https://checkia.fr/blog/<serie>/<slug>/
+
+## X (tweet)
+<≤ 280 caractères, lien inclus, ends with the article URL>
+#CNCC #CAC #Audit
+
+## Instagram
+<hook line, 3–5 short lines, blank lines between them, invitation « Article
+complet sur checkia.fr — lien en bio », then the hashtags on their own line>
+#CNCC #CAC #Audit
+
+## LinkedIn / Facebook
+<hook line, 4–8 short lines with one concrete fact or figure, one line
+that says the rest is on the blog, the article URL on its own line>
+#CNCC #CAC #Audit
+```
+
+Rules:
+- Same facts as the article, no new claims. Vouvoiement, no exclamation
+  marks, no emojis beyond one at most on Instagram.
+- The tweet must stay under 280 characters including the URL and hashtags.
+- Instagram cannot link from a caption: say « lien en bio » and put the URL
+  in the file so the author can update the bio link.
+- LinkedIn and Facebook share the same snippet. The first line is the hook
+  shown before « voir plus », so it carries the insight.
+- Standard hashtags on every platform: `#CNCC #CAC #Audit`.
+- Pair each post with the matching visual from `images/blog/<slug>/`.
 
 ## What makes LLMs cite us (maintain)
 

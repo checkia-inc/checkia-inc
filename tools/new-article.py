@@ -125,9 +125,11 @@ def main():
     print("  6. Cartes : /blog/, page de série (+ ItemList JSON-LD), pagenav/« À lire ensuite » des voisins.")
     print("  7. python3 tools/build-llms.py   (index.md + llms-full.txt)")
     print("  8. python3 tools/check-seo.py    (0 erreur, encore en noindex)")
-    print("  9. Demander « Prêt à publier ? ». Si oui : robots en index, sitemap.xml (lastmod),")
+    print(f"  9. Rédiger blog/{serie}/{slug}/social.md : tweet, légende Instagram, texte LinkedIn/Facebook")
+    print("     (en français, une idée + le lien vers l'article, #CNCC #CAC #Audit).")
+    print(" 10. Demander « Prêt à publier ? ». Si oui : robots en index, sitemap.xml (lastmod),")
     print("     blog/feed.xml, llms.txt, build-llms + check-seo à nouveau, commit (message en français).")
-    print(f" 10. Après déploiement : tools/indexnow.sh {SITE}/blog/{serie}/{slug}/")
+    print(f" 11. Après déploiement : tools/indexnow.sh {SITE}/blog/{serie}/{slug}/")
 
 
 if __name__ == "__main__":

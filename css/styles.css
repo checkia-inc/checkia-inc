@@ -455,18 +455,18 @@ em { font-style: normal; color: var(--blue); }
 .hero__shots {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: clamp(0.75rem, 1.6vw, 1.25rem);
+  align-items: start;
   max-width: 1080px;
-  height: clamp(230px, 27vw, 400px);
+  height: clamp(200px, 21.5vw, 262px);
   overflow: hidden;
   margin: clamp(2.75rem, 5vw, 4rem) auto 0;
-  -webkit-mask-image: linear-gradient(180deg, #000 34%, transparent 97%);
-  mask-image: linear-gradient(180deg, #000 34%, transparent 97%);
+  -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 62%, transparent 100%);
 }
 
-/* Les visuels portent déjà leur propre cadre en perspective :
-   aucun contour supplémentaire, seulement un fondu en pied. */
-.hero__shot img { width: 100%; }
+/* Cartes arrondies avec bordure intégrée aux visuels ; fondu léger en pied. */
+.hero__shot img { width: 100%; height: auto; display: block; }
 
 /* --- Cartes problème ---------------------------------------------------- */
 .cards {
@@ -805,7 +805,7 @@ html.js .reveal.is-in {
 
 /* --- Petits écrans ------------------------------------------------------ */
 @media (max-width: 40rem) {
-  .hero__shots { grid-template-columns: 1fr; max-width: 20rem; height: 200px; }
+  .hero__shots { grid-template-columns: 1fr; max-width: 20rem; height: 210px; }
   .hero__shots .hero__shot:nth-child(n + 2) { display: none; }
 }
 

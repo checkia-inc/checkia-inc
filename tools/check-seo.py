@@ -19,7 +19,7 @@ Indexed articles only (checkia-meta block required):
   - named author: matching Person in JSON-LD and in the visible byline
   - present in sitemap.xml (lastmod == dateModified), feed.xml, llms.txt
   - at least 2 incoming internal links from other pages
-  - social visual set in images/blog/<slug>/ (warning)
+  - social visual set in images/blog/<slug>/ and social.md next to the post (warnings)
 
 Usage: python3 tools/check-seo.py   (exit 1 on errors)
 """
@@ -313,6 +313,10 @@ def main():
             )
             if incoming < 2:
                 err(page, f"{incoming} lien(s) internes entrants (minimum 2 : hub /blog/ + page de série)")
+
+            # Social copy
+            if not (r["path"].parent / "social.md").exists():
+                warn(page, "pas de social.md (tweet, Instagram, LinkedIn/Facebook)")
 
             # Social visual set
             slug = r["path"].parent.name
