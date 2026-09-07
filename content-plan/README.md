@@ -41,7 +41,7 @@ Nom conseillé : « Plan éditorial CheckIA ». Trois onglets.
    alors que la pièce est déjà publiée est ignorée. Deux colonnes d'aide à droite :
 
    ```
-   F2 : =IFERROR(VLOOKUP(A2; 'Plan (repo)'!A:G; 7; FALSE); "")   → Titre
+   F2 : =IFERROR(VLOOKUP(A2; 'Plan (repo)'!A:H; 8; FALSE); "")   → Titre
    G2 : =IFERROR(VLOOKUP(A2; 'Plan (repo)'!A:B; 2; FALSE); "")   → Statut actuel
    ```
 

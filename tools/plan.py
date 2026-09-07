@@ -78,11 +78,11 @@ MOIS_RE = re.compile(r"^\d{4}-\d{2}$")
 
 # (frontmatter key, CSV header). `id` first: it is the join key in Google Sheets.
 CSV_COLUMNS = [
-    ("id", "id"), ("statut", "Statut"), ("type", "Type"), ("serie", "Série"),
+    ("id", "id"), ("statut", "Statut"), ("url", "URL"), ("type", "Type"), ("serie", "Série"),
     ("rubrique", "Rubrique"), ("pilier", "Pilier"), ("titre", "Titre de travail"),
     ("requete", "Requête cible"), ("requetes-secondaires", "Requêtes secondaires"),
     ("auteur", "Auteur"), ("interviewe", "Interviewé"), ("mois", "Mois"),
-    ("date-prevue", "Date prévue"), ("date-publiee", "Date publiée"), ("url", "URL"),
+    ("date-prevue", "Date prévue"), ("date-publiee", "Date publiée"),
     ("priorite", "Priorité"), ("responsable", "Responsable"), ("image-og", "Image OG"),
     ("video-id", "Vidéo (ID)"), ("conditions", "Conditions"), ("rafraichit", "Rafraîchit"),
     ("piece-liee", "Pièce liée"), ("fonctionnalites", "Fonctionnalités"),
