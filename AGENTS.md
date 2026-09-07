@@ -201,8 +201,10 @@ creates it, you fill it in, the checker enforces it on indexed posts:
 3. **Write the article** in French, in the voice above. Fill the meta block
    (`query`, `author`). Apply the keyword rules if a query is targeted.
 4. **Author.** Apply the author procedure below if a person signs the post.
-5. **`<head>`.** `<title>` 50–60 characters, description 140–160, canonical,
-   full OG and Twitter set, ISO dates, JSON-LD (see the checklists below).
+5. **`<head>`.** Keep the Google tag inherited from the template at the
+   top of `<head>`. `<title>` 50–60 characters, description 140–160,
+   canonical, full OG and Twitter set, ISO dates, JSON-LD (see the
+   checklists below).
 6. **Video** (video and temoignage posts): replace `REMPLACER_ID_YOUTUBE`
    (facade + chapters + noscript + JSON-LD `embedUrl`), duration (`PT12M34S`
    and displayed `12:34`), thumbnail, and paste the **full transcript** into
@@ -272,6 +274,24 @@ and show accurate publication **and** update dates.
 
 ## `<head>` checklist (every article)
 
+- **Google tag (Google Analytics 4, ID `G-L4K7TZWD7Q`)** at the top of
+  `<head>`, right after `<meta charset="utf-8">`, before every other tag.
+  Exactly one per page. The templates already carry it, so a post created
+  with `tools/new-article.py` inherits it: never remove it, never duplicate
+  it, never change the ID. Every page of the site (hub, series pages,
+  articles, templates) must have it:
+
+  ```html
+  <!-- Google tag (gtag.js) — Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4K7TZWD7Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-L4K7TZWD7Q');
+  </script>
+  ```
 - `<title>` (50–60 chars, main query first when targeted, ends with `| CheckIA`)
 - `<meta name="description">` (140–160 chars, answers the search intent)
 - `<link rel="canonical">` — `https://checkia.fr/…/` with trailing slash
@@ -411,6 +431,8 @@ Only after the author answered yes to « Prêt à publier ? »:
 
 ## Template rules (do not break)
 
+- The Google tag (`G-L4K7TZWD7Q`) stays at the top of `<head>` on every
+  page, exactly once (see the `<head>` checklist).
 - A single `<h1>` per page; `h2`/`h3` hierarchy without skipping levels.
 - « L'essentiel » (`.tldr`) stays at the top of the article.
 - Visible FAQ and JSON-LD `FAQPage` identical word for word.
