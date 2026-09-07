@@ -2,7 +2,7 @@
 id: P065
 slug: logiciel-dedie-vs-bureautique-ia-generique
 type: texte
-serie: nouveautes-produit
+serie: futur-de-l-audit
 rubrique:
 pilier: P3 Logiciel CAC
 titre: Logiciel dédié ou suite bureautique avec IA générique : comparatif pour les missions spécifiques
@@ -63,3 +63,4 @@ Comparaison honnête : coût, confidentialité, cohérence des documents, traça
 ## Journal
 
 - 2026-09-07 — agent — brief créé à partir du plan éditorial 2026-2027 (statut : idee)
+- 2026-09-07 — Chloe — série : nouveautes-produit → futur-de-l-audit (Nouveautés produit réservé aux fonctionnalités livrées, décision Chloe)

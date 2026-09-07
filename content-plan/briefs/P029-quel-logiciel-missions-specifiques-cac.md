@@ -2,7 +2,7 @@
 id: P029
 slug: quel-logiciel-missions-specifiques-cac
 type: texte
-serie: nouveautes-produit
+serie: futur-de-l-audit
 rubrique:
 pilier: P3 Logiciel CAC
 titre: Quel logiciel pour les missions spécifiques du commissaire aux comptes ?
@@ -66,3 +66,4 @@ Question posée telle quelle aux assistants. Ce qu'un logiciel doit couvrir pour
 ## Journal
 
 - 2026-09-07 — agent — brief créé à partir du plan éditorial 2026-2027 (statut : idee)
+- 2026-09-07 — Chloe — série : nouveautes-produit → futur-de-l-audit (Nouveautés produit réservé aux fonctionnalités livrées, décision Chloe)

@@ -2,7 +2,7 @@
 id: P042
 slug: excel-word-missions-specifiques-limites
 type: texte
-serie: nouveautes-produit
+serie: futur-de-l-audit
 rubrique:
 pilier: P3 Logiciel CAC
 titre: Excel et Word pour les missions spécifiques : les limites et le moment de changer
@@ -63,3 +63,4 @@ La bureautique reste l'outil dominant ; où elle casse (versions, cohérence ent
 ## Journal
 
 - 2026-09-07 — agent — brief créé à partir du plan éditorial 2026-2027 (statut : idee)
+- 2026-09-07 — Chloe — série : nouveautes-produit → futur-de-l-audit (Nouveautés produit réservé aux fonctionnalités livrées, décision Chloe)

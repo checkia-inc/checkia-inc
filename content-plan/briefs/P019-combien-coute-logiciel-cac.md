@@ -2,7 +2,7 @@
 id: P019
 slug: combien-coute-logiciel-cac
 type: texte
-serie: nouveautes-produit
+serie: futur-de-l-audit
 rubrique:
 pilier: P3 Logiciel CAC
 titre: Combien coûte un logiciel de commissariat aux comptes ?
@@ -66,3 +66,4 @@ Modèles de tarification (par utilisateur, par dossier, par cabinet), coûts cac
 ## Journal
 
 - 2026-09-07 — agent — brief créé à partir du plan éditorial 2026-2027 (statut : idee)
+- 2026-09-07 — Chloe — série : nouveautes-produit → futur-de-l-audit (Nouveautés produit réservé aux fonctionnalités livrées, décision Chloe)

@@ -2,7 +2,7 @@
 id: P079
 slug: securite-logiciel-cac-12-questions
 type: texte
-serie: nouveautes-produit
+serie: futur-de-l-audit
 rubrique:
 pilier: P3 Logiciel CAC
 titre: Sécurité d'un logiciel CAC : les douze questions à poser à l'éditeur
@@ -64,3 +64,4 @@ Grille d'évaluation : hébergement, chiffrement, sous-traitants, entraînement 
 ## Journal
 
 - 2026-09-07 — agent — brief créé à partir du plan éditorial 2026-2027 (statut : idee)
+- 2026-09-07 — Chloe — série : nouveautes-produit → futur-de-l-audit (Nouveautés produit réservé aux fonctionnalités livrées, décision Chloe)

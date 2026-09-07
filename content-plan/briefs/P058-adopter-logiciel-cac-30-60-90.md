@@ -2,7 +2,7 @@
 id: P058
 slug: adopter-logiciel-cac-30-60-90
 type: texte
-serie: nouveautes-produit
+serie: futur-de-l-audit
 rubrique:
 pilier: P3 Logiciel CAC
 titre: Adopter un logiciel CAC en 30, 60 et 90 jours : plan pour les associés
@@ -63,3 +63,4 @@ Conduite du changement : premiers dossiers, trames du cabinet, formation, indica
 ## Journal
 
 - 2026-09-07 — agent — brief créé à partir du plan éditorial 2026-2027 (statut : idee)
+- 2026-09-07 — Chloe — série : nouveautes-produit → futur-de-l-audit (Nouveautés produit réservé aux fonctionnalités livrées, décision Chloe)

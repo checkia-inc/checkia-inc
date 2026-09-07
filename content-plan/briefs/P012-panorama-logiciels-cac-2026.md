@@ -2,7 +2,7 @@
 id: P012
 slug: panorama-logiciels-cac-2026
 type: texte
-serie: nouveautes-produit
+serie: futur-de-l-audit
 rubrique:
 pilier: P3 Logiciel CAC
 titre: Panorama des logiciels pour commissaires aux comptes 2026
@@ -71,3 +71,4 @@ Liste classée et factuelle des solutions du marché (RevisAudit Premium, DreamA
 ## Journal
 
 - 2026-09-07 — agent — brief créé à partir du plan éditorial 2026-2027 (statut : idee)
+- 2026-09-07 — Chloe — série : nouveautes-produit → futur-de-l-audit (Nouveautés produit réservé aux fonctionnalités livrées, décision Chloe)

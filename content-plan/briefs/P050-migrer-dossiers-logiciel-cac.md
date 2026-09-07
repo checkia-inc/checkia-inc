@@ -2,7 +2,7 @@
 id: P050
 slug: migrer-dossiers-logiciel-cac
 type: texte
-serie: nouveautes-produit
+serie: futur-de-l-audit
 rubrique:
 pilier: P3 Logiciel CAC
 titre: Migrer ses dossiers vers un logiciel CAC : formats, conservation et contrôles de reprise
@@ -63,3 +63,4 @@ Sujet à forte intention d'achat et peu documenté : quoi migrer, quoi archiver 
 ## Journal
 
 - 2026-09-07 — agent — brief créé à partir du plan éditorial 2026-2027 (statut : idee)
+- 2026-09-07 — Chloe — série : nouveautes-produit → futur-de-l-audit (Nouveautés produit réservé aux fonctionnalités livrées, décision Chloe)
