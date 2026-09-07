@@ -31,8 +31,14 @@ Nom conseillé : « Plan éditorial CheckIA ». Trois onglets.
    écrasé à chaque rafraîchissement.
 
 2. **Décisions** — le seul onglet que vous modifiez. Colonnes, dans cet ordre :
-   `id | Statut décidé | Commentaire | Décidé par | Date`. Une ligne par décision, jamais
-   d'édition des anciennes lignes. Deux colonnes d'aide à droite :
+   `id | Statut décidé | Commentaire | Décidé par | Date`. Deux façons de l'utiliser, au
+   choix : une ligne par pièce (l'id en colonne A, le statut décidé dans la liste
+   déroulante en B, que l'on change au fil du temps) ou une ligne par décision. Les
+   options de la liste déroulante peuvent porter une explication après un tiret
+   (« Brief validé — lance la rédaction ») : seul le libellé avant le tiret compte. Seules
+   les décisions humaines sont appliquées (Brief validé, Prêt à publier, À rafraîchir,
+   Archivé) et uniquement dans le sens du flux : une cellule restée sur « Brief validé »
+   alors que la pièce est déjà publiée est ignorée. Deux colonnes d'aide à droite :
 
    ```
    F2 : =IFERROR(VLOOKUP(A2; 'Plan (repo)'!A:G; 7; FALSE); "")   → Titre

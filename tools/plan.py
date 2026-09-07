@@ -270,12 +270,28 @@ def find_brief(bid):
     sys.exit("Brief %s introuvable dans content-plan/briefs/." % bid)
 
 
-def normalize_statut(value):
-    v = fold(value)
+def normalize_statut(value, strict=True):
+    """Slug for a status given as slug or French label; text after « — » is ignored
+    (the Sheet's dropdown options carry a short explanation after a dash)."""
+    v = fold(re.split(r"\s[—–-]\s", value.strip(), 1)[0])
     for slug, label in LABELS.items():
         if v in (fold(slug), fold(label)):
             return slug
-    sys.exit("Statut inconnu : « %s ». Choix : %s" % (value, ", ".join(LABELS.values())))
+    if strict:
+        sys.exit("Statut inconnu : « %s ». Choix : %s" % (value, ", ".join(LABELS.values())))
+    return None
+
+
+# Decisions a human may take from the Sheet, and the statuses they may be taken from.
+# Anything else in the « Statut décidé » cell is a stale value (e.g. « Brief validé » on a
+# piece the agent has since moved to « Publié ») and is ignored, never applied backwards.
+SHEET_DECISIONS = {
+    "brief-valide": {"idee", "en-attente"},
+    "pret-a-publier": {"redaction", "relecture"},
+    "a-rafraichir": {"publie"},
+    "archive": set(STATUTS) - {"archive"},
+    "idee": {"archive"},
+}
 
 
 def pilier(b):
@@ -946,8 +962,12 @@ def cmd_sync_sheet(args):
         if b is None:
             warn("brief inconnu ignoré : %s" % bid)
             continue
-        new = normalize_statut(statut_raw) if statut_raw else None
+        new = normalize_statut(statut_raw, strict=False) if statut_raw else None
+        if statut_raw and new is None:
+            warn("%s : statut « %s » non reconnu, ignoré" % (bid, statut_raw))
         change = new is not None and new != b.statut
+        if change and b.statut not in SHEET_DECISIONS.get(new, set()):
+            change = False  # stale or non-human value: leave the brief where the agent put it
         already = bool(comment) and comment in b.body
         if not change and (not comment or already):
             continue
