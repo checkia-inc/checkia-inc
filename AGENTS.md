@@ -413,6 +413,85 @@ Rules:
 - Precise, dated figures with a scope. LLMs cite sources that give numbers.
 - Outgoing links to CNCC, H2A and the NEP texts.
 
+## AI search engines (multi-model)
+
+The « What makes LLMs cite us » layer above is shared by every assistant.
+This section covers what differs between engines, and how we verify that
+they actually cite us. Every rule here is checked by `tools/check-seo.py`
+where a check is possible.
+
+### Crawler policy — allow every retrieval bot, explicitly
+
+Our objective is to be cited, so we **allow** both the retrieval bots (used
+to answer a question) and the training bots. The decision is written into
+`robots.txt` as an explicit `Allow: /` per user-agent, never left to the
+wildcard alone: some engines treat an explicit entry as a stronger signal,
+and an explicit list makes an accidental block visible in a diff.
+
+| Engine | User-agents to keep allowed | How it finds us |
+|---|---|---|
+| ChatGPT search, Copilot (OpenAI) | `OAI-SearchBot` (search index), `ChatGPT-User` (live fetch), `GPTBot` (training) | own index + Bing index → IndexNow matters |
+| Claude (Anthropic) | `Claude-SearchBot`, `Claude-User`, `ClaudeBot` | Brave index (no push API: clean crawl + sitemap) |
+| Perplexity | `PerplexityBot`, `Perplexity-User` | own index + live fetch, favors fresh, dated pages |
+| Google AI Overviews / AI Mode, Gemini | `Googlebot` (AI Overviews use the normal index), `Google-Extended` (Gemini grounding) | Google index; `max-snippet:-1` already set |
+| Microsoft Copilot, Bing chat | `Bingbot` | Bing index → IndexNow |
+| Mistral Le Chat (French market) | `MistralAI-User` | live fetch |
+| Others worth keeping open | `Applebot`, `Applebot-Extended`, `Amazonbot`, `Meta-ExternalAgent`, `DuckAssistBot`, `CCBot` | Siri/Apple Intelligence, Alexa, Meta AI, DuckDuckGo, Common Crawl |
+
+Rules:
+- `robots.txt` lists each of these user-agents with `Allow: /`. Never add a
+  `Disallow` for one of them without the author's explicit decision,
+  recorded in a commit message.
+- Never block by user-agent at the hosting or CDN level either (bot
+  protection rules, rate limits on `*Bot`). Check this after any hosting
+  change.
+- `noindex` pages stay `noindex` for everyone; the crawler policy does not
+  override the go-live gate.
+- `llms.txt` must link to `llms-full.txt`, and both must stay reachable at
+  the site root (no redirect, `text/plain` or `text/markdown`).
+
+### What each engine weighs (write for all of them at once)
+
+- **Freshness and dates.** Perplexity and ChatGPT search prefer pages with
+  a visible, recent date. Keep `dateModified` honest and update it on every
+  substantive edit (see « Maintenance »).
+- **Self-contained passages.** Assistants lift one paragraph, not a page.
+  Every `h2` section must be readable on its own: restate the subject in
+  the first sentence instead of « ce point » or « cette fonctionnalité ».
+- **Question headings.** AI Overviews and Perplexity match `h2` and FAQ
+  questions almost verbatim; use the question-form queries listed under
+  « Target queries ».
+- **Numbers with a scope and a source.** Every engine favors pages that give
+  a figure, its scope and its origin (NEP, CNCC, H2A, our own measurement
+  with its date).
+- **Entity consistency (brand queries).** Assistants answer « Qui a créé
+  CheckIA ? » and « Où sont hébergées les données CheckIA ? » from
+  third-party sources as much as from our site. Keep the one-paragraph
+  company description at the top of `llms.txt`, the `Organization` JSON-LD,
+  the LinkedIn page and the other profiles listed in `sameAs` identical in
+  substance: same founders, same positioning, same hosting claim. Fix
+  drift as soon as it appears.
+- **Bing Webmaster Tools.** The site must stay verified there and the
+  sitemap submitted: Bing feeds ChatGPT search and Copilot.
+
+### Citation check (after publication)
+
+Google Search Console is the only engine that reports on us. For the
+others, we test by hand. One week after go-live, and again one month later,
+ask each assistant the post's target query (or, for `query: none`, the
+first FAQ question) in French, with web search enabled where it is an
+option:
+
+1. ChatGPT (search on), 2. Perplexity, 3. Claude (web search on),
+4. Google AI Overviews / AI Mode, 5. Mistral Le Chat.
+
+Record the result in `blog/suivi-ia.md` (one line per engine and date:
+cited / not cited, which page was cited, which competitor was cited
+instead). When an engine cites a competitor or an older post of ours, fix
+the post before anything else: sharpen the « L'essentiel » bullets, add the
+missing figure, tighten the `h2` question. Then update `dateModified`,
+regenerate the LLM layer and re-check.
+
 ## Going live
 
 Only after the author answered yes to « Prêt à publier ? »:
@@ -436,6 +515,8 @@ Only after the author answered yes to « Prêt à publier ? »:
    (URL inspection → Demander une indexation).
 7. Verify: [Rich Results Test](https://search.google.com/test/rich-results),
    LinkedIn Post Inspector for the OG preview, and click the internal links.
+8. One week later: run the « Citation check » from the « AI search engines »
+   section and log the result in `blog/suivi-ia.md`.
 
 ## Template rules (do not break)
 
@@ -463,5 +544,5 @@ Only after the author answered yes to « Prêt à publier ? »:
 | `python3 tools/new-article.py <serie> <slug> "Titre" --format <…>` | creates a post from the template, with the meta block |
 | `python3 tools/social-images.py <serie> <slug> --source <generated\|image:…\|video:…>` | OG image + Instagram/story set |
 | `python3 tools/build-llms.py` | regenerates `index.md` + `llms-full.txt` |
-| `python3 tools/check-seo.py` | validates every rule (0 errors required) |
+| `python3 tools/check-seo.py` | validates every rule, including the AI crawler allowlist in `robots.txt` (0 errors required) |
 | `tools/indexnow.sh <url…>` | submits published URLs to Bing / IndexNow |

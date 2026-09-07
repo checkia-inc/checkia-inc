@@ -1,4 +1,71 @@
+# CheckIA — politique de crawl
+# Objectif : être cité par Google et par les assistants IA (ChatGPT, Claude,
+# Perplexity, Gemini, Copilot, Mistral). Chaque robot de recherche ou de
+# réponse IA est autorisé explicitement. Ne jamais ajouter de Disallow pour
+# l'un d'eux sans décision de l'auteur (voir AGENTS.md, « AI search engines »).
+
 User-agent: *
+Allow: /
+
+# OpenAI — ChatGPT search, Copilot, entraînement
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Anthropic — Claude
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google — AI Overviews (Googlebot) et Gemini (Google-Extended)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft — Bing, Copilot
+User-agent: Bingbot
+Allow: /
+
+# Mistral — Le Chat
+User-agent: MistralAI-User
+Allow: /
+
+# Autres assistants et index
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://checkia.fr/sitemap.xml

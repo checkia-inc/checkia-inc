@@ -20,6 +20,10 @@ Indexed articles only (checkia-meta block required):
   - present in sitemap.xml (lastmod == dateModified), feed.xml, llms.txt
   - at least 2 incoming internal links from other pages
   - social visual set in images/blog/<slug>/ and social.md next to the post (warnings)
+Site level:
+  - robots.txt: explicit Allow: / for every AI search / answer bot listed in
+    AI_BOTS, and no Disallow for them (AGENTS.md, « AI search engines »)
+  - llms.txt links to llms-full.txt; blog/suivi-ia.md exists (warning)
 
 Usage: python3 tools/check-seo.py   (exit 1 on errors)
 """
@@ -36,6 +40,17 @@ SITE = "https://checkia.fr"
 GENERIC_OG = SITE + "/images/og-image.jpg"
 TEAM = "L'équipe CheckIA"
 SOCIAL_FILES = ["og.jpg", "instagram-feed.png", "instagram-square.png", "story.png"]
+# AI search / answer bots that must stay explicitly allowed in robots.txt
+AI_BOTS = [
+    "OAI-SearchBot", "ChatGPT-User", "GPTBot",
+    "Claude-SearchBot", "Claude-User", "ClaudeBot",
+    "PerplexityBot", "Perplexity-User",
+    "Googlebot", "Google-Extended",
+    "Bingbot",
+    "MistralAI-User",
+    "Applebot", "Applebot-Extended", "Amazonbot", "Meta-ExternalAgent",
+    "DuckAssistBot", "CCBot",
+]
 
 errors, warnings = [], []
 
@@ -270,7 +285,40 @@ def check_page(path):
     }
 
 
+def check_robots():
+    """robots.txt: one explicit Allow: / per AI bot, no Disallow for them."""
+    path = ROOT / "robots.txt"
+    if not path.exists():
+        errors.append("[ERREUR] robots.txt: fichier absent")
+        return
+    groups = {}          # user-agent (lower) -> list of directives
+    current = []
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.split("#", 1)[0].strip()
+        if not line:
+            continue
+        key, _, value = line.partition(":")
+        key, value = key.strip().lower(), value.strip()
+        if key == "user-agent":
+            current = groups.setdefault(value.lower(), [])
+        elif key in ("allow", "disallow"):
+            current.append((key, value))
+    for bot in AI_BOTS:
+        rules = groups.get(bot.lower())
+        if rules is None:
+            errors.append(f"[ERREUR] robots.txt: {bot} sans entrée explicite (Allow: / attendu)")
+            continue
+        if ("allow", "/") not in rules:
+            errors.append(f"[ERREUR] robots.txt: {bot} sans « Allow: / »")
+        blocked = [v for k, v in rules if k == "disallow" and v]
+        if blocked:
+            errors.append(f"[ERREUR] robots.txt: {bot} bloqué (Disallow: {', '.join(blocked)})")
+    if "sitemap: https://checkia.fr/sitemap.xml" not in path.read_text(encoding="utf-8").lower():
+        errors.append("[ERREUR] robots.txt: ligne Sitemap absente")
+
+
 def main():
+    check_robots()
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     feed = (ROOT / "blog" / "feed.xml").read_text(encoding="utf-8")
     llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
@@ -330,6 +378,10 @@ def main():
 
     if not (ROOT / "llms-full.txt").exists():
         warnings.append("[attention] llms-full.txt absent (version longue pour les LLM)")
+    if "llms-full.txt" not in llms:
+        errors.append("[ERREUR] llms.txt: ne référence pas llms-full.txt")
+    if not (ROOT / "blog" / "suivi-ia.md").exists():
+        warnings.append("[attention] blog/suivi-ia.md absent (suivi des citations par les assistants IA)")
 
     for w in warnings:
         print(w)
