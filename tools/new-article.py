@@ -3,6 +3,8 @@
 
 Usage :
   python3 tools/new-article.py <serie> <slug> "Titre de l'article" --format video|texte|temoignage
+  python3 tools/new-article.py --brief P014      (série, slug, titre, format, requête, auteur
+                                                  et image lus dans content-plan/briefs/)
 
   <serie>  : nouveautes-produit | futur-de-l-audit | vie-de-l-entreprise | temoignages-clients
   <slug>   : court, minuscules, tirets, sans accents (ex. cloture-des-comptes-ia)
@@ -16,6 +18,7 @@ L'article est créé en `noindex` avec les placeholders du gabarit et un bloc
 checklist affichée, puis `python3 tools/check-seo.py` avant publication.
 """
 
+import html
 import re
 import sys
 from datetime import date
@@ -41,21 +44,50 @@ MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
         "août", "septembre", "octobre", "novembre", "décembre"]
 
 
+def load_brief(bid):
+    """Return the Brief object for <bid> (tools/plan.py is the single reader of briefs)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from plan import find_brief, fold  # noqa: F401  (plan.py has no import side effects)
+    return find_brief(bid), fold
+
+
 def main():
     argv = sys.argv[1:]
-    args, fmt = [], None
+    args, fmt, brief_id = [], None, None
     i = 0
     while i < len(argv):
         a = argv[i]
-        if a.startswith("--format"):
+        if a.startswith("--format") or a.startswith("--brief"):
             if "=" in a:
-                fmt = a.split("=", 1)[1]
+                val = a.split("=", 1)[1]
             else:
                 i += 1
-                fmt = argv[i] if i < len(argv) else None
+                val = argv[i] if i < len(argv) else None
+            if a.startswith("--format"):
+                fmt = val
+            else:
+                brief_id = val
         else:
             args.append(a)
         i += 1
+
+    # --brief <id>: the validated brief answers the intake (type, série, slug, titre,
+    # requête, auteur, image). Positional arguments still override it.
+    brief, fold = (None, None)
+    if brief_id:
+        brief, fold = load_brief(brief_id)
+        btype = brief.get("type")
+        if btype not in TEMPLATES:
+            sys.exit("Le brief %s est de type « %s » : pas d'article à générer (refresh → modifier "
+                     "l'article existant ; linkedin/annuaire → hors site)." % (brief.id, btype))
+        if fmt and fmt != btype:
+            sys.exit("--format %s contredit le type du brief (%s)." % (fmt, btype))
+        fmt = btype
+        if brief.get("serie") == "site":
+            sys.exit("Le brief %s est une page du site (hors blog) : la créer à la main avec la checklist <head>." % brief.id)
+        defaults = [brief.get("serie"), brief.get("slug"), brief.get("titre")]
+        args = args + defaults[len(args):]
+
     if len(args) < 3:
         sys.exit(__doc__)
     if fmt not in TEMPLATES:
@@ -95,12 +127,36 @@ def main():
                   '<meta name="robots" content="noindex, nofollow">', text)
 
     # Per-article meta block (read by tools/check-seo.py on indexed posts)
+    query, author, og, brief_line = "none", "L'équipe CheckIA", "pending", ""
+    if brief:
+        q = brief.get("requete") or "none"
+        query = "none" if fold(q) in ("aucune", "none", "") else q
+        author = brief.get("auteur") or author
+        og = "default" if brief.get("image-og") == "generique" else "pending"
+        brief_line = f"       brief: {brief.id}\n"
+        # Prefill title, description, h1 and video id from the brief.
+        m = re.search(r"<title>(.*?)</title>", text, re.S)
+        if m:
+            old_title = re.sub(r"\s*\|\s*CheckIA\s*$", "", m.group(1).strip())
+            if old_title:
+                text = text.replace(old_title, html.escape(title, quote=False))
+        m = re.search(r'<meta name="description" content="([^"]*)"', text)
+        if m and brief.get("description"):
+            text = text.replace(m.group(1), html.escape(brief.get("description"), quote=True))
+        m = re.search(r"<h1[^>]*>(.*?)</h1>", text, re.S)
+        if m:
+            text = text.replace(m.group(1), html.escape(title, quote=False))
+        if brief.get("video-id"):
+            text = text.replace("REMPLACER_ID_YOUTUBE", brief.get("video-id"))
+        if brief.get("video-duree"):
+            text = re.sub(r'"duration":\s*"PT[^"]*"', '"duration": "%s"' % brief.get("video-duree"), text)
     block = (
         "  <!-- checkia-meta\n"
         f"       format: {fmt}\n"
-        "       query: none\n"
-        "       author: L'équipe CheckIA\n"
-        "       og-image: pending\n"
+        f"       query: {query}\n"
+        f"       author: {author}\n"
+        f"       og-image: {og}\n"
+        f"{brief_line}"
         "  -->\n"
     )
     if "checkia-meta" in text:
@@ -113,6 +169,9 @@ def main():
 
     print(f"Créé : blog/{serie}/{slug}/index.html (noindex)\n")
     print(f"Titre à intégrer : « {title} »\n")
+    if brief:
+        print(f"Brief : {brief.id} — python3 tools/plan.py show {brief.id}")
+        print(f"Statut : python3 tools/plan.py set {brief.id} statut=redaction (si ce n'est pas déjà fait)\n")
     print("Checklist avant publication (voir AGENTS.md) :")
     print("  1. Lire les 3 derniers articles indexés (ton et style) : grep -L noindex blog/*/*/index.html")
     print("  2. Remplacer titres, description, contenus, FAQ, TLDR (« L'essentiel »).")

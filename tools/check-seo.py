@@ -317,6 +317,47 @@ def check_robots():
         errors.append("[ERREUR] robots.txt: ligne Sitemap absente")
 
 
+def check_briefs(results):
+    """Content plan awareness (warnings only — plan errors live in tools/plan.py check).
+
+    Every indexed article should have a brief in content-plan/briefs/ with statut
+    « publie » and a matching `brief:` line in its checkia-meta block."""
+    briefs_dir = ROOT / "content-plan" / "briefs"
+    if not briefs_dir.is_dir():
+        return
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from plan import load_briefs, CSV_PATH  # noqa: F401
+    except ImportError:
+        return
+    briefs = [b for b in load_briefs() if b.is_article()]
+    by_slug = {(b.get("serie"), b.get("slug")): b for b in briefs}
+    for r in results:
+        if not r["is_article"] or r["noindex"]:
+            continue
+        rel = Path(r["page"])
+        serie, slug = rel.parts[1], rel.parts[2]
+        b = by_slug.get((serie, slug))
+        if b is None:
+            warn(r["page"], f"pas de brief dans content-plan/briefs (python3 tools/plan.py new {slug} …)")
+            continue
+        if b.statut != "publie":
+            warn(r["page"], f"brief {b.id} en statut « {b.statut} » alors que la page est indexée")
+        meta = parse_meta(r["path"].read_text(encoding="utf-8")) or {}
+        if meta.get("brief") != b.id:
+            warn(r["page"], f"bloc checkia-meta sans « brief: {b.id} »")
+        q = meta.get("query", "none")
+        bq = b.get("requete") or "aucune"
+        if fold("aucune" if q.lower() == "none" else q) != fold("aucune" if bq.lower() == "none" else bq):
+            warn(r["page"], f"query « {q} » ≠ requête du brief {b.id} « {bq} »")
+        if meta.get("author") and fold(meta["author"]) != fold(b.get("auteur")):
+            warn(r["page"], f"author « {meta['author']} » ≠ auteur du brief {b.id}")
+    if briefs and CSV_PATH.exists():
+        newest = max(b.path.stat().st_mtime for b in briefs)
+        if CSV_PATH.stat().st_mtime < newest:
+            warnings.append("[attention] content-plan/plan.csv plus ancien que les briefs : python3 tools/plan.py build")
+
+
 def main():
     check_robots()
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
@@ -375,6 +416,8 @@ def main():
                 for f in SOCIAL_FILES:
                     if not (sdir / f).exists():
                         warn(page, f"visuel manquant : images/blog/{slug}/{f}")
+
+    check_briefs(results)
 
     if not (ROOT / "llms-full.txt").exists():
         warnings.append("[attention] llms-full.txt absent (version longue pour les LLM)")
