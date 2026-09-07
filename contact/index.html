@@ -12,6 +12,7 @@
 
     gtag('config', 'G-L4K7TZWD7Q');
   </script>
+  <script src="/js/analytics.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Contact — CheckIA</title>
@@ -389,6 +390,10 @@
             if (!res.ok) throw new Error("HTTP " + res.status);
             form.reset();
             showStatus("success", "Votre message a bien été envoyé. Nous reviendrons vers vous dans les meilleurs délais.");
+            // Mesure : envoi réussi du formulaire de contact (événement clé GA4).
+            if (typeof window.gtag === "function") {
+              window.gtag("event", "contact_form_submit", { form_id: "contact-form", page_path: window.location.pathname });
+            }
           })
           .catch(function () {
             showStatus("error", "Une erreur est survenue lors de l’envoi. Réessayez, ou écrivez-nous à contact@checkia.fr.");

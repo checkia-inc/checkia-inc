@@ -291,7 +291,15 @@ and show accurate publication **and** update dates.
 
     gtag('config', 'G-L4K7TZWD7Q');
   </script>
+  <script src="/js/analytics.js" defer></script>
   ```
+
+  `js/analytics.js` sends the interaction events that are marked as key
+  events (conversions) in GA4: `button_click` (every button and
+  button-styled link, with `button_text` and `button_type`), `book_call`
+  (Notion calendar link), `email_click` (mailto links) and
+  `contact_form_submit` (successful contact form). Keep the CTA markup
+  (`.btn`, `.nav-cta`, the calendar URL) so the tracking keeps working.
 - `<title>` (50–60 chars, main query first when targeted, ends with `| CheckIA`)
 - `<meta name="description">` (140–160 chars, answers the search intent)
 - `<link rel="canonical">` — `https://checkia.fr/…/` with trailing slash
