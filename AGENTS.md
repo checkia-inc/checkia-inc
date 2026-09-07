@@ -153,6 +153,85 @@ Ask in one message, in French, and wait for the answers:
 8. OG / social image source: provided file, video thumbnail, or generated card.
 9. Call to action (default: the 30-minute call).
 
+## Working from the content plan
+
+The twelve-month plan lives in `content-plan/` (see `content-plan/README.md`, in French,
+for the humans' side). One brief per piece in `content-plan/briefs/<id>-<slug>.md`;
+`tools/plan.py` reads and writes them; `plan.csv` and `plan-editorial.xlsx` are generated
+and mirrored into the team's Google Sheet. The repo is the source of truth.
+
+**Start of every content session**
+
+```bash
+python3 tools/plan.py sync-sheet <URL CSV publiée de l'onglet Décisions, dans content-plan/README.md>
+python3 tools/plan.py next
+```
+
+`sync-sheet` applies the humans' decisions (status changes, comments) into the briefs;
+`next` says what to work on and prints the commands. Never invent a piece: if there is no
+brief, create one with `plan.py new` and leave it at « Idée ».
+
+**A validated brief replaces the intake questions.** When a brief is at `brief-valide`, do
+not ask the nine intake questions again. Post **one** French confirmation message that
+restates the brief in six lines (type, série, titre, requête cible, auteur, image OG, vidéo
+if any, appel à l'action) and ends with « Je démarre la rédaction ? ». Proceed after a yes.
+If a field is missing, ask only for that field, record it with
+`plan.py set <id> cle=valeur`, then start. Then:
+
+```bash
+python3 tools/plan.py set <id> statut=redaction
+python3 tools/new-article.py --brief <id>
+```
+
+**Statuses.** `idee` → `brief-valide` (**human**) → `redaction` (agent) → `relecture`
+(agent) → `pret-a-publier` (**human**) → `publie` (agent, after go-live) → `a-rafraichir`
+→ `archive` (**human**). `en-attente` while a `conditions` item reads « — non ». The agent
+never sets `brief-valide`, `pret-a-publier` or `archive`; when a human gives that decision
+in chat, record it with `plan.py set <id> statut=… --humain "Prénom"`. A `pret-a-publier`
+decision in the Sheet counts as the yes to « Prêt à publier ? »; still show the checker
+output before flipping `robots`. After « Going live »:
+
+```bash
+python3 tools/plan.py set <id> statut=publie
+python3 tools/plan.py build
+```
+
+Commit the brief, `plan.csv` and `plan-editorial.xlsx` together with the article.
+
+**Refresh pieces** (`type: refresh`, `rafraichit: Pxxx`). Read the target post and the
+reason in the brief's Journal. Edit the body only; keep the URL, the `<h1>` intent and the
+target query. Update `dateModified`, `article:modified_time`, the sitemap `lastmod`, re-run
+`tools/build-llms.py` and `tools/check-seo.py`. Move to `relecture` with a diff summary;
+commit only after `pret-a-publier`. On `publie`, add a Journal line « rafraîchi par Pxxx »
+to the target brief.
+
+**Interview rubric « Paroles de commissaires aux comptes »** (`rubrique: paroles-de-cac`,
+series Le futur de l'audit). Format `video` (chapters = questions, full transcript) or
+`texte` (Q/R). The title names the interviewee (« … : entretien avec Prénom Nom,
+commissaire aux comptes »). The interviewee is a `Person` node in the JSON-LD `@graph`
+(`@id` `#person-prenom-nom`, `jobTitle`, `sameAs` LinkedIn) referenced from the
+`BlogPosting` as `mentions`; the author stays whoever signs (author procedure applies if
+the interviewee also signs). Quotes are verbatim and validated by the interviewee: the
+condition « Citations validées par l'interviewé — ok » must be set before `pret-a-publier`.
+The post's single blockquote is theirs.
+
+**Product truth.** Every claim about what CheckIA does must match
+`content-plan/produit-verite.md`. Features under « Feuille de route » may only be mentioned
+as future (« prévu », with a date), never as available. Product briefs list
+`fonctionnalites:` ids; `plan.py check` enforces the mapping. When the product changes,
+update `produit-verite.md` first, then flag the affected posts `a-rafraichir`. Hosting is
+worded « hébergé en France (AWS Paris) »; never « souverain ». Never cite NEP 9010–9070
+until the CNCC has confirmed their status.
+
+**Citation check (monthly).** On the first working day of the month, `plan.py next --all`
+lists the due checks (7 and 30 days after `date-publiee`). Run the five engines as
+described under « AI search engines », append rows to `blog/suivi-ia.md`, and when a
+competitor is cited instead of us, set the brief `a-rafraichir` with the reason in its
+Journal.
+
+`python3 tools/plan.py check` must report 0 errors before any commit that touches
+`content-plan/` or a blog article.
+
 ## Templates (3)
 
 | `--format` | Post type | Template (noindex) |
@@ -541,7 +620,13 @@ Only after the author answered yes to « Prêt à publier ? »:
 
 | Command | Role |
 |---|---|
+| `python3 tools/plan.py next` / `list` / `show <id>` | what to work on now; the plan's pieces and their briefs |
+| `python3 tools/plan.py sync-sheet <url>` | applies the humans' decisions from the Google Sheet into the briefs |
+| `python3 tools/plan.py set <id> statut=… [--humain "Prénom"]` | moves a piece through the workflow (human-only transitions need `--humain`) |
+| `python3 tools/plan.py check` | validates the plan and its consistency with the site (0 errors required) |
+| `python3 tools/plan.py build` | regenerates `content-plan/plan.csv` (Google Sheets mirror) and `plan-editorial.xlsx` |
 | `python3 tools/new-article.py <serie> <slug> "Titre" --format <…>` | creates a post from the template, with the meta block |
+| `python3 tools/new-article.py --brief <id>` | same, prefilled from the brief (format, requête, auteur, titre, vidéo) |
 | `python3 tools/social-images.py <serie> <slug> --source <generated\|image:…\|video:…>` | OG image + Instagram/story set |
 | `python3 tools/build-llms.py` | regenerates `index.md` + `llms-full.txt` |
 | `python3 tools/check-seo.py` | validates every rule, including the AI crawler allowlist in `robots.txt` (0 errors required) |
