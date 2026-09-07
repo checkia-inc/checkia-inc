@@ -45,7 +45,8 @@ Nom conseillé : « Plan éditorial CheckIA ». Trois onglets.
    Publier cet onglet : Fichier → Partager → Publier sur le web → onglet Décisions → CSV.
    Coller l'URL obtenue ci-dessous ; l'agent la lit au début de chaque session.
 
-   URL CSV publiée de l'onglet Décisions : _(à compléter)_
+   URL CSV publiée de l'onglet Décisions :
+   https://docs.google.com/spreadsheets/d/e/2PACX-1vSvUrUmRGW210fN6F6-5VV1biiCwNgi_l2zac37DQ2WTAQgPw4X9Pj8pb5kAL95GnZNoiUiYXGggtQX/pub?gid=1362190869&single=true&output=csv
 
 3. **Réglages** — la cellule Version (B1) et les deux URL.
 

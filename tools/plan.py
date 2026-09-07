@@ -896,10 +896,29 @@ def fetch_decisions(source):
     text = raw.decode("utf-8-sig")
     sample = text[:2048]
     delim = ";" if sample.count(";") > sample.count(",") else ","
-    rows = list(csv.DictReader(io.StringIO(text), delimiter=delim))
-    missing = [c for c in DECISION_COLUMNS if rows and c not in rows[0]]
+    reader = csv.reader(io.StringIO(text), delimiter=delim)
+    try:
+        header = next(reader)
+    except StopIteration:
+        return []
+    # Tolerant header mapping: accents/case ignored, « Statut » alone accepted for
+    # « Statut décidé », stray cells (e.g. a split « décidé ») ignored.
+    aliases = {"id": "id", "statut decide": "Statut décidé", "statut": "Statut décidé",
+               "commentaire": "Commentaire", "decide par": "Décidé par", "date": "Date"}
+    index = {}
+    for i, h in enumerate(header):
+        name = aliases.get(fold(h))
+        if name and name not in index:
+            index[name] = i
+    missing = [c for c in DECISION_COLUMNS if c not in index]
     if missing:
-        sys.exit("Colonnes manquantes dans la feuille Décisions : %s" % ", ".join(missing))
+        sys.exit("Colonnes manquantes dans la feuille Décisions : %s (en-têtes lus : %s)"
+                 % (", ".join(missing), ", ".join(header)))
+    rows = []
+    for cells in reader:
+        if not any(c.strip() for c in cells):
+            continue
+        rows.append({c: (cells[i] if i < len(cells) else "") for c, i in index.items()})
     return rows
 
 
