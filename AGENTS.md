@@ -45,7 +45,7 @@ assistants (ChatGPT, Claude, Perplexity, Google AI Overviews).
 
 | Series | URL | Formats |
 |---|---|---|
-| Nouveautés produit | `/blog/nouveautes-produit/` | text + screenshots, demo video |
+| Nouveautés produit | `/blog/nouveautes-produit/` | text + screenshots, demo video — **only features shipped in CheckIA** (ids in `content-plan/produit-verite.md`); market and buying-guide pieces go to Le futur de l'audit |
 | Le futur de l'audit | `/blog/futur-de-l-audit/` | analyses, video + article |
 | Vie de l'entreprise | `/blog/vie-de-l-entreprise/` | text |
 | Témoignages clients | `/blog/temoignages-clients/` | video (template: `modele-temoignage/`) |
