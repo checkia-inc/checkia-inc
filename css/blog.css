@@ -467,9 +467,6 @@
   line-height: 1.72;
   letter-spacing: -0.008em;
   color: var(--ink-2);
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
   text-wrap: pretty;
 }
 
@@ -526,19 +523,33 @@
 .prose ol > li { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-2); padding-left: 0.25rem; }
 .prose ol > li::marker { font-weight: 600; color: var(--blue); font-variant-numeric: tabular-nums; }
 
-/* Justification a la francaise pour les listes du corps de texte */
+/* --- Justification du texte (mise en page a la francaise) ------------------ */
+/* Tout le texte courant de l'article est justifie : chapeau, L'essentiel,
+   corps, listes, FAQ et transcription. Les citations restent au fer a gauche. */
+.lead,
+.tldr li,
+.prose p,
 .prose ul > li,
-.prose ol > li {
+.prose ol > li,
+.faq details > p,
+.transcript div p {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
 }
 
-/* Sur mobile, les colonnes etroites creent des rivieres : retour au fer a gauche */
+.prose blockquote p { text-align: left; hyphens: manual; }
+
+/* Sous 34rem la colonne est trop etroite : la justification creerait des
+   espaces trop larges, on revient au fer a gauche. */
 @media (max-width: 34rem) {
+  .lead,
+  .tldr li,
   .prose p,
   .prose ul > li,
-  .prose ol > li { text-align: left; hyphens: manual; }
+  .prose ol > li,
+  .faq details > p,
+  .transcript div p { text-align: left; hyphens: manual; }
 }
 
 .prose figure { margin: 0.75rem 0; }
