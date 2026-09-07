@@ -135,7 +135,9 @@ def main():
         og = "default" if brief.get("image-og") == "generique" else "pending"
         brief_line = f"       brief: {brief.id}\n"
         # Prefill title, description, h1 and video id from the brief.
-        m = re.search(r"<title>(.*?)</title>", text, re.S)
+        # [^<]* : the template's head comment also contains the string « <title> »,
+        # so a lazy .*? with re.S would swallow the comment and its closing tag.
+        m = re.search(r"<title>([^<]*)</title>", text)
         if m:
             old_title = re.sub(r"\s*\|\s*CheckIA\s*$", "", m.group(1).strip())
             if old_title:

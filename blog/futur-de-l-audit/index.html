@@ -73,7 +73,14 @@
         "isPartOf": { "@id": "https://checkia.fr/blog/#blog" },
         "mainEntity": {
           "@type": "ItemList",
-          "itemListElement": []
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "NEP 911 et 912 révisées (arrêté du 24 juillet 2026) : ce qui change pour les petites entreprises",
+              "url": "https://checkia.fr/blog/futur-de-l-audit/nep-911-912-revisees-2026/"
+            }
+          ]
         }
       },
       {
@@ -138,13 +145,22 @@
 
     <section class="section section--tint">
       <div class="wrap">
-        <!-- Premiers articles en préparation. Au premier article publié :
-             remplacer cet état vide par une .postgrid de cartes (modèle
-             commenté sur /blog/), ajouter l'article à l'ItemList du JSON-LD
-             ci-dessus, au sitemap.xml et au feed.xml. -->
-        <div class="emptystate reveal">
-          <p><strong>Les premiers articles arrivent.</strong><br>Analyses et entretiens sur la transformation du commissariat aux comptes sont en préparation.</p>
-          <a class="btn btn--ghost" href="/blog/">Voir tous les articles</a>
+        <h2 class="visually-hidden">Articles de la série</h2>
+        <div class="postgrid">
+          <a class="postcard reveal" href="/blog/futur-de-l-audit/nep-911-912-revisees-2026/">
+            <div class="cover">
+              <img src="/images/blog/nep-911-912-revisees-2026/og.jpg" width="1200" height="630" alt="Carte CheckIA : NEP 911 et 912 révisées (arrêté du 24 juillet 2026), ce qui change pour les petites entreprises." loading="lazy" decoding="async">
+            </div>
+            <div class="postcard__body">
+              <p class="postmeta">
+                <span class="postmeta__serie">Le futur de l'audit</span>
+                <span class="postmeta__sep" aria-hidden="true">·</span>
+                <time datetime="2026-09-07">7 septembre 2026</time>
+              </p>
+              <h3 class="postcard__title">NEP 911 et 912 révisées&nbsp;: ce qui change pour les petites entreprises</h3>
+              <p class="body">Arrêté du 24 juillet 2026&nbsp;: mission de trois ou six exercices, rapport sur les risques, dispenses et dossier proportionné. Ce que le cabinet doit retenir et documenter.</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
