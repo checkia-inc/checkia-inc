@@ -22,4 +22,5 @@ Contact : contact@checkia.fr — Démonstration : https://calendar.notion.so/mee
 
 ## Articles du blog
 
+- [NEP 911 et 912 révisées (arrêté du 24 juillet 2026) : ce qui change pour les petites entreprises](https://checkia.fr/blog/futur-de-l-audit/nep-911-912-revisees-2026/) : la mission de trois exercices (article L. 821-57, certification et rapport sur les risques, dispenses) et la mission de six exercices, les seuils de l'article D. 221-5 et ce que le dossier de travail proportionné doit permettre de comprendre.
 - [Pourquoi nous avons créé CheckIA pour les missions spécifiques du CAC](https://checkia.fr/blog/vie-de-l-entreprise/ia-missions-specifiques-cac/) : le constat fondateur (trop de temps consacré à formaliser dans les missions spécifiques), le parti pris — CheckIA automatise la préparation documentaire, jamais le jugement professionnel — et la démonstration en vidéo.
